@@ -8,10 +8,13 @@ This is a PocketMine plugin that helps staffs track players using commands.
 - The console is allowed to see the commands the player uses.
 - Clean Code.
 
-# Using
-How to use? Very simple!
-Please go to the path PocketMine-MP/plugin_data/Track/config.yml
-Then add the names of staffs that are allowed to view other players, console and rcon using the command.
+# Setup
+How to setup? Very simple!
+- Step 1: Download the plugin and put it in plugins(PocketMine-MP/plugins)
+- Step 2: Start the server to load config.yml
+- Step 3: After server startup is complete, stop the server.
+- Step 4: Go to the path PocketMine-MP/plugin_data/Track/config.yml
+- Step 5: Then add the names of staffs that are allowed to view other players, console and rcon using the command.
 
 
 # Future

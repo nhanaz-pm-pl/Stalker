@@ -20,7 +20,7 @@ How to setup? Very simple! Follow the steps below:
 # Future
 - Save the history of players using the command.
 - Updated UI to make it easier to review someone's command usage history over a different period of time.
-- And many other features recommended by plugin users,...
+- And many other features recommended by plugin users, etc.
 
 # Image
 ![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)

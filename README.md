@@ -1,4 +1,6 @@
-# General
+<h1>Track<img src="https://s1.uphinh.org/2021/08/06/track.jpg" height="64" width="64" align="left"></img></h1>
+<br />
+
 This is a PocketMine plugin that helps staffs track players using commands.
 
 # Features

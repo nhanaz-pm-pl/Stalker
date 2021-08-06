@@ -5,4 +5,5 @@ branches:
 projects:
   Track:
     path: ""
+    icon: icon.png
 ...

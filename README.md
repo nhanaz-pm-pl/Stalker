@@ -1,5 +1,4 @@
-<h1>Track<img src="https://i0.wp.com/s1.uphinh.org/2021/08/06/icon.png" height="64" width="64" align="left"></img></h1>
-<br />
+<h1>Track<img src="https://i0.wp.com/s1.uphinh.org/2021/08/06/icon.png" height="64" width="64" align="left"></img></h1><br/>
 
 This is a PocketMine plugin that helps staffs track players using commands.
 
@@ -42,5 +41,5 @@ If you encounter an error or would like to contribute to my plugin, contact me v
 - Discord: Nguyễn Thành Nhân#9115
 
 # License
-GNU General Public License v3.0
+GNU General Public License v3.0 <br/>
 Read details at the link: https://www.gnu.org/licenses/gpl-3.0.html

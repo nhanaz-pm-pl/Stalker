@@ -35,8 +35,11 @@ Trackers:
   - Steve
   - Alex
 ...
-
 ```
+
+# Contact
+If you encounter an error or would like to contribute to my plugin, contact me via the platforms below:
+- Discord: Nguyễn Thành Nhân#9115
 
 # License
 GNU General Public License v3.0

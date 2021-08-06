@@ -10,7 +10,7 @@ This is a PocketMine plugin that helps staffs track players using commands.
 - Clean Code.
 
 # Setup
-How to setup? Very simple!
+How to setup? Very simple! Follow the steps below:
 - Step 1: Download the plugin and put it in plugins(PocketMine-MP/plugins)
 - Step 2: Start the server to load config.yml
 - Step 3: After server startup is complete, stop the server.

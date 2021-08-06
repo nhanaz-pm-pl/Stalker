@@ -18,7 +18,6 @@ How to setup? Very simple!
 - Step 4: Go to the path PocketMine-MP/plugin_data/Track/config.yml
 - Step 5: Then add the names of staffs that are allowed to view other players, console and rcon using the command.
 
-
 # Future
 - Save the history of players using the command.
 - Updated UI to make it easier to review someone's command usage history over a different period of time.
@@ -26,6 +25,18 @@ How to setup? Very simple!
 
 # Image
 ![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)
+
+# Config
+```
+---
+#Please enter the names of the staff who are authorized to follow the player using the command as the format is present below.
+Trackers:
+  - NhanAZ
+  - Steve
+  - Alex
+...
+
+```
 
 # License
 GNU General Public License v3.0

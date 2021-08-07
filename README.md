@@ -26,7 +26,7 @@ How to setup? Very simple! Follow the steps below:
 Tracking screen in-game:
 ![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)
 Tracking screen in console:
-![console.png](https://s1.uphinh.org/2021/08/07/console.th.png)
+![console81c741157dc81622.png](https://s1.uphinh.org/2021/08/07/console81c741157dc81622.png)
 
 # Config
 ```

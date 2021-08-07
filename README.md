@@ -22,8 +22,11 @@ How to setup? Very simple! Follow the steps below:
 - Updated UI to make it easier to review someone's command usage history over a different period of time.
 - And many other features recommended by plugin users, etc.
 
-# Image
+# Images
+Tracking screen in-game:
 ![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)
+Tracking screen in console:
+[![console.th.png](https://s1.uphinh.org/2021/08/07/console.th.png)](https://uphinh.org/image/OHGf6t)
 
 # Config
 ```

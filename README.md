@@ -25,7 +25,6 @@ How to setup? Very simple! Follow the steps below:
 # Images
 Tracking screen in-game:
 ![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)
-<br/>
 Tracking screen in console:
 ![console81c741157dc81622.png](https://s1.uphinh.org/2021/08/07/console81c741157dc81622.png)
 

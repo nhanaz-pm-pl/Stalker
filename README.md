@@ -23,9 +23,10 @@ How to setup? Very simple! Follow the steps below:
 - And many other features recommended by plugin users, etc.
 
 # Images
-<p> **Tracking screen in-game:** </p>
+**Tracking screen in-game:**
 ![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)
-<p> **Tracking screen in console:** </p>
+
+**Tracking screen in console:**
 ![console81c741157dc81622.png](https://s1.uphinh.org/2021/08/07/console81c741157dc81622.png)
 
 # Config

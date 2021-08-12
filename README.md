@@ -20,9 +20,9 @@ How to setup? Very simple! Follow the steps below:
 - Step 5: Then add the names of the employees who are allowed to view other players, consoles and rcon using the command at `config.yml`
 
 # Future
-- Save the history of players using the command.
-- Updated UI to make it easier to review someone's command usage history over a different period of time.
-- And many other features recommended by plugin users, etc.
+- [X] Save the history of players using the command.
+- [X] Updated UI to make it easier to review someone's command usage history over a different period of time.
+- [X] And many other features recommended by plugin users, etc.
 
 # Images
 **Tracking screen in-game:**

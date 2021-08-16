@@ -2,7 +2,7 @@
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
-This is a PocketMine plugin that helps staffs track players using commands.
+This is a PocketMine plugin that helps staffs track players using commands.<br/>
 [![Download!](https://user-images.githubusercontent.com/10297075/101246002-cb046780-3710-11eb-950f-ba06934b8138.png)](https://poggit.pmmp.io/r/136167/Track.phar)
 
 # Features

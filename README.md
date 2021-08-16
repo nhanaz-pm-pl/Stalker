@@ -9,7 +9,6 @@ This is a PocketMine plugin that helps staffs track players using commands.
 - Selected people can review the commands they entered.
 - Selected people are allowed to see console or rcon commands and players used.
 - The console is allowed to see the commands the player uses.
-- Clean Code.
 
 # Setup
 How to setup? Very simple! Follow the steps below:

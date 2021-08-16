@@ -3,6 +3,8 @@
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
 This is a PocketMine plugin that helps staffs track players using commands.
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.

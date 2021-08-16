@@ -7,11 +7,9 @@
 This is a PocketMine plugin that helps staffs track players using commands.<br/>
 
 <!-- <div align="center"> -->
-Click the green button below to download the plugin.
-
 <a href="https://poggit.pmmp.io/r/136167/Track.phar" target="_blank" title="Click to download the pluginm">
   <img src="https://user-images.githubusercontent.com/10297075/101246002-cb046780-3710-11eb-950f-ba06934b8138.png" </img>
-</a>
+</a> Click the green button below to download the plugin.
 <!-- </div> -->
 
 # Features

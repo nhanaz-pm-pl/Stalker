@@ -41,7 +41,7 @@ How to setup? Very simple! Follow the steps below:
 ![console81c741157dc81622.png](https://s1.uphinh.org/2021/08/07/console81c741157dc81622.png)
 
 # Configs
-config.yml
+config.yml :
 ```
 ---
 #Please enter the names of the staff who are authorized to follow the player using the command as the format is present below.
@@ -52,7 +52,8 @@ Trackers:
 ...
 ```
 
-history.yml
+
+history.yml :
 ```
 ---
 #This is where the system will save the command usage history.

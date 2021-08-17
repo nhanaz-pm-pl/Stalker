@@ -40,7 +40,8 @@ How to setup? Very simple! Follow the steps below:
 
 ![console81c741157dc81622.png](https://s1.uphinh.org/2021/08/07/console81c741157dc81622.png)
 
-# Config
+# Configs
+config.yml
 ```
 ---
 #Please enter the names of the staff who are authorized to follow the player using the command as the format is present below.
@@ -48,6 +49,16 @@ Trackers:
   - NhanAZ
   - Steve
   - Alex
+...
+```
+
+history.yml
+```
+---
+#This is where the system will save the command usage history.
+'Wed 18/08/2021 03:57:24(AM) : Console': say Hi.
+'Wed 18/08/2021 03:57:31(AM) : Console': say This is a feature to save the history
+  of using the command.
 ...
 ```
 

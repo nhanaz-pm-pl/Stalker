@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
+use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\server\ServerCommandEvent;
@@ -18,6 +19,7 @@ class Main extends PluginBase implements Listener
     {
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
     }
 
     public function onCommandPreProcess(PlayerCommandPreprocessEvent $event)
@@ -32,6 +34,9 @@ class Main extends PluginBase implements Listener
                 if ($tracker) {
                     $prefix = $this->getDescription()->getPrefix();
                     $tracker->sendMessage('[' . $prefix . '] ' . $name . ' > ' . $cmd);
+                    $time = date("D d/m/Y H:i:s(A)");
+                    $this->history->set($time . ' : ' . $name, $cmd);
+                    $this->history->save();
                 }
             }
         }
@@ -41,6 +46,9 @@ class Main extends PluginBase implements Listener
     public function onServerCommand(ServerCommandEvent $event)
     {
         $cmd = $event->getCommand();
+        $time = date("D d/m/Y H:i:s(A)");
+        $this->history->set($time . ' : Console', $cmd);
+        $this->history->save();
         $this->getLogger()->info('Console > ' . $cmd);
         $trackers = $this->getConfig()->get('Trackers');
         foreach ($trackers as $tracker) {
@@ -55,12 +63,15 @@ class Main extends PluginBase implements Listener
     public function onRemoteCommand(RemoteServerCommandEvent $event)
     {
         $cmd = $event->getCommand();
+        $time = date("D d/m/Y H:i:s(A)");
+        $this->history->set($time . ' : Rcon', $cmd);
+        $this->history->save();
         $this->getLogger()->info('Rcon > ' . $cmd);
         $trackers = $this->getConfig()->get('Trackers');
         foreach ($trackers as $tracker) {
             $tracker = $this->getServer()->getPlayer($tracker);
             if ($tracker) {
-                $tracker->sendMessage('Rcon > ' . $cmd);
+            $tracker->sendMessage('Rcon > ' . $cmd);
             }
         }
         return true;

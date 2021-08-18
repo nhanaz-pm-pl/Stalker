@@ -38,7 +38,7 @@ How to setup? Very simple! Follow the steps below:
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-![console81c741157dc81622.png](https://s1.uphinh.org/2021/08/07/console81c741157dc81622.png)
+![cls.png](https://s1.uphinh.org/2021/08/18/cls.png)
 
 # Configs
 config.yml :

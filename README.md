@@ -4,8 +4,6 @@
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
-<a href="https://discord.gg/UpM96PSrJk"><img src="https://discordapp.com/api/guilds/869130615851745281/embed.png" alt="Discord server"/></a>
-
 This is a PocketMine plugin that helps staffs track players using commands.<br/>
 
 <!-- <div align="center"> -->

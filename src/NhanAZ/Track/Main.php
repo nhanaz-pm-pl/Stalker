@@ -8,9 +8,9 @@ use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\server\ServerCommandEvent;
+use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\server\RemoteServerCommandEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
-
 
 class Main extends PluginBase implements Listener
 {
@@ -20,6 +20,29 @@ class Main extends PluginBase implements Listener
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
+
+        if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {
+            foreach ($this->history->getAll() as $history => $data) {
+                $this->history->remove($history);
+            }
+            $this->history->save();
+            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved");
+            $this->getLogger()->info($NoticeRemoved);
+        } 
+        
+    }
+
+    public function onDisable() : void
+    {
+        if ($this->getConfig()->get("DeleteHistory")["onDisable"] == true) {
+            foreach ($this->history->getAll() as $history => $data) {
+                $this->history->remove($history);
+            }
+            $this->history->save();
+            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved");
+            $this->getLogger()->info($NoticeRemoved);
+        }
+
     }
 
     public function onCommandPreProcess(PlayerCommandPreprocessEvent $event)
@@ -41,6 +64,7 @@ class Main extends PluginBase implements Listener
             }
         }
         return true;
+
     }
 
     public function onServerCommand(ServerCommandEvent $event)
@@ -58,6 +82,7 @@ class Main extends PluginBase implements Listener
             }
         }
         return true;
+
     }
 
     public function onRemoteCommand(RemoteServerCommandEvent $event)
@@ -75,6 +100,7 @@ class Main extends PluginBase implements Listener
             }
         }
         return true;
+        
     }
 
 }

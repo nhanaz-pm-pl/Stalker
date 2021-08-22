@@ -1,4 +1,16 @@
 ---
+DeleteHistory:
+#Set onEnable: true if you want to clear the player's command usage history when the server enable.
+#Set onEnable: false if you don't want to clear the player's command usage history when the server enable.
+  onEnable: true #Default: onEnable: true (Recomend using)
+
+#Set onDisable: true if you want to clear the player's command usage history when the server disable
+#Set onDisable: false if you don't want to clear the player's command usage history when the server disable
+  onDisable: false #Default: onDisable: true (Recomend using)
+
+#This is the message when the command usage history has been cleared.
+NoticeRemoved: "Removed player command usage history (Disabled at config.yml)"
+
 #Please enter the names of the staff who are authorized to follow the player using the command as the format is present below.
 Trackers:
   - NhanAZ

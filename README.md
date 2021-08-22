@@ -34,11 +34,11 @@ How to setup? Very simple! Follow the steps below:
 # Images
 <div align="center"> <b>Tracking screen in-game</b> </div>
 
-![track.jpg](https://s1.uphinh.org/2021/08/06/track.jpg)
+![ingame](images/ingame.jpg)
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-![cls.png](https://s1.uphinh.org/2021/08/18/cls.png)
+![incls](images/incls.png)
 
 # Configs
 config.yml :

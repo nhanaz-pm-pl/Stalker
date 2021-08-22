@@ -1,6 +1,6 @@
 ![NhanAZ](images/NhanAZ.gif)
 
-<h1>Track<img src="https://i0.wp.com/s1.uphinh.org/2021/08/06/icon.png" height="64" width="64" align="left"></img></h1><br/>
+<h1>Track<img src="https://i0.wp.com/s1.uphinh.org/2021/08/06/icon.png" height="64" width="64"></img></h1><br/>
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 

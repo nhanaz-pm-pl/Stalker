@@ -2,7 +2,7 @@
 DeleteHistory:
 #Set onEnable: true if you want to clear the player's command usage history when the server enable.
 #Set onEnable: false if you don't want to clear the player's command usage history when the server enable.
-  onEnable: true #Default: onEnable: true (Recomend using)
+  onEnable: false #Default: onEnable: true (Recomend using)
 
 #Set onDisable: true if you want to clear the player's command usage history when the server disable
 #Set onDisable: false if you don't want to clear the player's command usage history when the server disable

@@ -8,7 +8,6 @@ use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\server\ServerCommandEvent;
-use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\server\RemoteServerCommandEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
 

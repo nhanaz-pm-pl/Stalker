@@ -15,6 +15,8 @@ class Main extends PluginBase implements Listener
 {
 
     CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
+    
+    public $history;
 
     public function onEnable() : void
     {

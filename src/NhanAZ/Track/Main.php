@@ -15,6 +15,8 @@ use pocketmine\event\player\PlayerCommandPreprocessEvent;
 class Main extends PluginBase implements Listener
 {
 
+    CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
+
     public function onEnable() : void
     {
         $this->saveDefaultConfig();
@@ -26,7 +28,7 @@ class Main extends PluginBase implements Listener
                 $this->history->remove($history);
             }
             $this->history->save();
-            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved");
+            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
             $this->getLogger()->info($NoticeRemoved);
         } 
         
@@ -39,7 +41,7 @@ class Main extends PluginBase implements Listener
                 $this->history->remove($history);
             }
             $this->history->save();
-            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved");
+            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
             $this->getLogger()->info($NoticeRemoved);
         }
 

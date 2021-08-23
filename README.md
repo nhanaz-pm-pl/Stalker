@@ -34,11 +34,11 @@ How to setup? Very simple! Follow the steps below:
 # Images
 <div align="center"> <b>Tracking screen in-game</b> </div>
 
-![ingame](images/ingame.jpg)
+<img src="https://raw.githubusercontent.com/NhanAZ/Track/main/images/ingame.jpg" </img>
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-![incls](images/incls.png)
+<img src="https://raw.githubusercontent.com/NhanAZ/Track/main/images/incls.png" </img>
 
 # Configs
 [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)

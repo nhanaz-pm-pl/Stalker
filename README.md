@@ -42,6 +42,7 @@ How to setup? Very simple! Follow the steps below:
 
 # Configs
 [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)
+
 [history.yml](https://github.com/NhanAZ/Track/blob/main/resources/history.yml)
 
 # Contact

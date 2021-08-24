@@ -41,9 +41,9 @@ How to setup? Very simple! Follow the steps below:
 ![incls](images/incls.png)
 
 # Configs
-[config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)
+- [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)
 
-[history.yml](https://github.com/NhanAZ/Track/blob/main/resources/history.yml)
+- [history.yml](https://github.com/NhanAZ/Track/blob/main/resources/history.yml)
 
 # Contact
 If you encounter an error or would like to contribute to my plugin, contact me via the platforms below:

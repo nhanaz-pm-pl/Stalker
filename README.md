@@ -38,7 +38,7 @@ How to setup? Very simple! Follow the steps below:
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-<a href="https://lh3.googleusercontent.com/hmPIDXZJmhCg9N2sNqpZkIT7SPALDDB2PCtk_lMSbdmBSCSSxEvtNXHY6_9Tjb3veW_Z0BrGK_eZJm33h9pNl_T5vrxQGl-RKcY8CFnN1Jveqe_66djY2HADl3aqx3shc5FBgFfH5-A=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/hmPIDXZJmhCg9N2sNqpZkIT7SPALDDB2PCtk_lMSbdmBSCSSxEvtNXHY6_9Tjb3veW_Z0BrGK_eZJm33h9pNl_T5vrxQGl-RKcY8CFnN1Jveqe_66djY2HADl3aqx3shc5FBgFfH5-A=w600-h315-p-k" /> </a>
+<img src="https://lh3.googleusercontent.com/hmPIDXZJmhCg9N2sNqpZkIT7SPALDDB2PCtk_lMSbdmBSCSSxEvtNXHY6_9Tjb3veW_Z0BrGK_eZJm33h9pNl_T5vrxQGl-RKcY8CFnN1Jveqe_66djY2HADl3aqx3shc5FBgFfH5-A=w600-h315-p-k" />
 
 # Configs
 - [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)

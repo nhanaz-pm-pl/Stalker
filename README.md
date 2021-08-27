@@ -8,7 +8,7 @@ This is a PocketMine plugin that helps staffs track players using commands.<br/>
 
 <!-- <div align="center"> -->
 <a href="https://poggit.pmmp.io/r/136167/Track.phar" target="_blank" title="Click to download the plugin">
-  <img src="images/download.png" </img>
+  <img src="https://s9.gifyu.com/images/downloadaf5585d1e37cae70.png" </img>
 </a>
 <!-- </div> -->
 
@@ -34,11 +34,11 @@ How to setup? Very simple! Follow the steps below:
 # Images
 <div align="center"> <b>Tracking screen in-game</b> </div>
 
-![ingame](images/ingame.jpg)
+<a href="https://gifyu.com/image/GaSR"><img src="https://s9.gifyu.com/images/ingame.jpg" alt="ingame.jpg" border="0" /></a>
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-<img src="https://lh3.googleusercontent.com/hmPIDXZJmhCg9N2sNqpZkIT7SPALDDB2PCtk_lMSbdmBSCSSxEvtNXHY6_9Tjb3veW_Z0BrGK_eZJm33h9pNl_T5vrxQGl-RKcY8CFnN1Jveqe_66djY2HADl3aqx3shc5FBgFfH5-A=w600-h315-p-k" />
+<a href="https://gifyu.com/image/GaSc"><img src="https://s9.gifyu.com/images/incls.png" alt="incls.png" border="0" /></a>
 
 # Configs
 - [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)

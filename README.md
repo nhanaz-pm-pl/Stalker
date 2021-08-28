@@ -1,6 +1,6 @@
-<a href="https://gifyu.com/image/Gb5f"><img src="https://s5.gifyu.com/images/NhanAZ.gif" alt="NhanAZ.gif" border="0" /></a>
+<img src="https://github.com/NhanAZ/Track/blob/main/images/NhanAZ.gif" />
 
-<h1>Track<img src="https://s9.gifyu.com/images/icon.png" height="64" width="64"  align="left"></img></h1><br/>
+<h1>Track<img src="https://github.com/NhanAZ/Track/blob/main/images/icon.png" height="64" width="64"  align="left"></img></h1><br/>
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
@@ -8,7 +8,7 @@ This is a PocketMine plugin that helps staffs track players using commands.<br/>
 
 <!-- <div align="center"> -->
 <a href="https://poggit.pmmp.io/r/136167/Track.phar" target="_blank" title="Click to download the plugin">
-  <img src="https://s9.gifyu.com/images/downloadaf5585d1e37cae70.png" </img>
+  <img src="https://github.com/NhanAZ/Track/blob/main/images/download.png" </img>
 </a>
 <!-- </div> -->
 
@@ -34,11 +34,11 @@ How to setup? Very simple! Follow the steps below:
 # Images
 <div align="center"> <b>Tracking screen in-game</b> </div>
 
-<a href="https://gifyu.com/image/GaSR"><img src="https://s9.gifyu.com/images/ingame.jpg" alt="ingame.jpg" border="0" /></a>
+<img src="https://github.com/NhanAZ/Track/blob/main/images/ingame.jpg" />
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-<a href="https://gifyu.com/image/GaSc"><img src="https://s9.gifyu.com/images/incls.png" alt="incls.png" border="0" /></a>
+<img src="https://github.com/NhanAZ/Track/blob/main/images/incls.png" />
 
 # Configs
 - [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)

@@ -41,9 +41,37 @@ How to setup? Very simple! Follow the steps below:
 <img src="https://github.com/NhanAZ/Track/blob/main/images/incls.png" />
 
 # Configs
-- [config.yml](https://github.com/NhanAZ/Track/blob/main/resources/config.yml)
+## config.yml
+```
+---
+DeleteHistory:
+#Set onEnable: true if you want to clear the player's command usage history when the server enable.
+#Set onEnable: false if you don't want to clear the player's command usage history when the server enable.
+  onEnable: false #onEnable: true (Recomend using)
 
-- [history.yml](https://github.com/NhanAZ/Track/blob/main/resources/history.yml)
+#Set onDisable: true if you want to clear the player's command usage history when the server disable
+#Set onDisable: false if you don't want to clear the player's command usage history when the server disable
+  onDisable: false #onDisable: false (Recomend using)
+
+#This is the message when the command usage history has been cleared.
+NoticeRemoved: "Removed player command usage history (Disabled at config.yml)"
+
+#Please enter the names of the staff who are authorized to follow the player using the command as the format is present below.
+Trackers:
+  - NhanAZ
+  - Steve
+  - Alex
+...
+```
+## history.yml
+```
+---
+#This is where the system will save the command usage history.
+'Wed 18/08/2021 03:57:24(AM) : Console': say Hi.
+'Wed 18/08/2021 03:57:31(AM) : Console': say This is a feature to save the history
+  of using the command.
+...
+```
 
 # Contact
 If you encounter an error or would like to contribute to my plugin, contact me via the platforms below:

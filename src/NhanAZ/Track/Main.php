@@ -22,6 +22,7 @@ class Main extends PluginBase implements Listener
     {
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->saveResource("history.yml");
         $this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
 
         if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {

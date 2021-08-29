@@ -4,7 +4,7 @@ prefix: Track
 main: NhanAZ\Track\Main
 api: 3.21.1
 author: NhanAZ
-version: 0.0.3
+version: 0.0.4
 description: Help staffs track players using commands.
 website: https://github.com/NhanAZ
 ...

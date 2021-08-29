@@ -10,6 +10,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\server\ServerCommandEvent;
 use pocketmine\event\server\RemoteServerCommandEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
+use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 
 class Main extends PluginBase implements Listener
 {
@@ -17,6 +18,11 @@ class Main extends PluginBase implements Listener
     CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
     
     public $history;
+    
+    public function onLoad() : void 
+    {
+        UpdateNotifier::checkUpdate($this->getDescription()->getName(), $this->getDescription()->getVersion());
+    }
 
     public function onEnable() : void
     {

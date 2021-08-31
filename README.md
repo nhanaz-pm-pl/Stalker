@@ -29,6 +29,8 @@ How to setup? Very simple! Follow the steps below:
 # Future
 - [X] Save the history of players using the command.
 - [ ] Updated UI to make it easier to review someone's command usage history over a different period of time.
+- [ ] Connect with Discord.
+- [ ] Connect with Messenger.
 - [ ] And many other features recommended by plugin users, etc.
 
 # Images

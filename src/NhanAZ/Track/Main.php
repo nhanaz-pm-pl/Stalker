@@ -6,6 +6,7 @@ namespace NhanAZ\Track;
 
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\server\ServerCommandEvent;
 use pocketmine\event\server\RemoteServerCommandEvent;
@@ -15,7 +16,9 @@ use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 class Main extends PluginBase implements Listener
 {
 
-    CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
+    public CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
+
+    public CONST Handle_Font = TextFormat::ESCAPE . "　";
     
     public $history;
     
@@ -66,7 +69,7 @@ class Main extends PluginBase implements Listener
                 $tracker = $this->getServer()->getPlayer($tracker);
                 if ($tracker) {
                     $prefix = $this->getDescription()->getPrefix();
-                    $tracker->sendMessage('[' . $prefix . '] ' . $name . ' > ' . $cmd);
+                    $tracker->sendMessage('[' . $prefix . '] ' . $name . ' > ' . $cmd . self::Handle_Font);
                     $time = date("D d/m/Y H:i:s(A)");
                     $this->history->set($time . ' : ' . $name, $cmd);
                     $this->history->save();
@@ -88,7 +91,8 @@ class Main extends PluginBase implements Listener
         foreach ($trackers as $tracker) {
             $tracker = $this->getServer()->getPlayer($tracker);
             if ($tracker) {
-                $tracker->sendMessage('Console > ' . $cmd);
+                $prefix = $this->getDescription()->getPrefix();
+                $tracker->sendMessage('[' . $prefix . '] ' . 'Console > ' . $cmd . self::Handle_Font);
             }
         }
         return true;
@@ -101,7 +105,8 @@ class Main extends PluginBase implements Listener
         $time = date("D d/m/Y H:i:s(A)");
         $this->history->set($time . ' : Rcon', $cmd);
         $this->history->save();
-        $this->getLogger()->info('Rcon > ' . $cmd);
+        $prefix = $this->getDescription()->getPrefix();
+        $this->getLogger()->info('[' . $prefix . '] ' . 'Rcon > ' . $cmd . self::Handle_Font);
         $trackers = $this->getConfig()->get('Trackers');
         foreach ($trackers as $tracker) {
             $tracker = $this->getServer()->getPlayer($tracker);

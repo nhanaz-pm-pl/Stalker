@@ -37,11 +37,11 @@ How to setup? Very simple! Follow the steps below:
 # Images
 <div align="center"> <b>Tracking screen in-game</b> </div>
 
-<img src="https://github.com/NhanAZ/Track/blob/main/images/ingame.jpg" />
+<img src="https://github.com/NhanAZ/Track/blob/main/images/handlefont.jpg" />
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-<img src="https://github.com/NhanAZ/Track/blob/main/images/handlefont.jpg" />
+<img src="https://github.com/NhanAZ/Track/blob/main/images/incls.png" />
 
 # Configs
 ## config.yml

@@ -41,7 +41,7 @@ How to setup? Very simple! Follow the steps below:
 
 <div align="center"> <b>Tracking screen in console</b> </div>
 
-<img src="https://github.com/NhanAZ/Track/blob/main/images/incls.png" />
+<img src="https://github.com/NhanAZ/Track/blob/main/images/handlefont.jpg" />
 
 # Configs
 ## config.yml

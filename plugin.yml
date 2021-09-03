@@ -2,7 +2,7 @@
 name: Track
 prefix: Track
 main: NhanAZ\Track\Main
-api: 3.21.1
+api: 3.21.2
 author: NhanAZ
 version: 0.0.6
 description: Help staffs track players using commands.

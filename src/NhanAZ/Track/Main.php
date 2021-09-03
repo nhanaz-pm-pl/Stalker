@@ -16,9 +16,9 @@ use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 class Main extends PluginBase implements Listener
 {
 
-    public CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
+    public CONST InvalidConfig = 'Invalid config. Please check config.yml again. Thank you.';
 
-    public CONST Handle_Font = TextFormat::ESCAPE . "　";
+    public CONST Handle_Font = TextFormat::ESCAPE . '　';
     
     public $history;
     
@@ -31,15 +31,15 @@ class Main extends PluginBase implements Listener
     {
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->saveResource("history.yml");
-        $this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
+        $this->saveResource('history.yml');
+        $this->history = new Config($this->getDataFolder().'history.yml', Config::YAML);
 
-        if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {
+        if ($this->getConfig()->get('DeleteHistory')['onEnable'] == true) {
             foreach ($this->history->getAll() as $history => $data) {
                 $this->history->remove($history);
             }
             $this->history->save();
-            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
+            $NoticeRemoved = $this->getConfig()->get('NoticeRemoved', self::InvalidConfig);
             $this->getLogger()->info($NoticeRemoved);
         } 
         
@@ -47,12 +47,12 @@ class Main extends PluginBase implements Listener
 
     public function onDisable() : void
     {
-        if ($this->getConfig()->get("DeleteHistory")["onDisable"] == true) {
+        if ($this->getConfig()->get('DeleteHistory')['onDisable'] == true) {
             foreach ($this->history->getAll() as $history => $data) {
                 $this->history->remove($history);
             }
             $this->history->save();
-            $NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
+            $NoticeRemoved = $this->getConfig()->get('NoticeRemoved', self::InvalidConfig);
             $this->getLogger()->info($NoticeRemoved);
         }
 
@@ -62,15 +62,17 @@ class Main extends PluginBase implements Listener
     {
         $name = $event->getPlayer()->getName();
         $cmd = $event->getMessage();
-        if ($cmd[0] == "/") {
+        if ($cmd[0] == '/') {
         $this->getLogger()->info($name . ' > ' . $cmd);
         $trackers = $this->getConfig()->get('Trackers');
             foreach ($trackers as $tracker) {
                 $tracker = $this->getServer()->getPlayer($tracker);
                 if ($tracker) {
                     $prefix = $this->getDescription()->getPrefix();
-                    $tracker->sendMessage('[' . $prefix . '] ' . $name . ' > ' . $cmd . self::Handle_Font);
-                    $time = date("D d/m/Y H:i:s(A)");
+                    $UnicodeFont = $this->getConfig()->get('UnicodeFont');
+                    $Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : '');
+                    $tracker->sendMessage('[' . $prefix . '] ' . $name . ' > ' . $cmd . $Handle_Variable_UnicodeFont);
+                    $time = date('D d/m/Y H:i:s(A)');
                     $this->history->set($time . ' : ' . $name, $cmd);
                     $this->history->save();
                 }
@@ -83,7 +85,7 @@ class Main extends PluginBase implements Listener
     public function onServerCommand(ServerCommandEvent $event)
     {
         $cmd = $event->getCommand();
-        $time = date("D d/m/Y H:i:s(A)");
+        $time = date('D d/m/Y H:i:s(A)');
         $this->history->set($time . ' : Console', $cmd);
         $this->history->save();
         $this->getLogger()->info('Console > ' . $cmd);
@@ -92,7 +94,9 @@ class Main extends PluginBase implements Listener
             $tracker = $this->getServer()->getPlayer($tracker);
             if ($tracker) {
                 $prefix = $this->getDescription()->getPrefix();
-                $tracker->sendMessage('[' . $prefix . '] ' . 'Console > ' . $cmd . self::Handle_Font);
+                $UnicodeFont = $this->getConfig()->get('UnicodeFont');
+                $Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : '');
+                $tracker->sendMessage('[' . $prefix . '] ' . 'Console > ' . $cmd . $Handle_Variable_UnicodeFont);
             }
         }
         return true;
@@ -102,11 +106,13 @@ class Main extends PluginBase implements Listener
     public function onRemoteCommand(RemoteServerCommandEvent $event)
     {
         $cmd = $event->getCommand();
-        $time = date("D d/m/Y H:i:s(A)");
+        $time = date('D d/m/Y H:i:s(A)');
         $this->history->set($time . ' : Rcon', $cmd);
         $this->history->save();
         $prefix = $this->getDescription()->getPrefix();
-        $this->getLogger()->info('[' . $prefix . '] ' . 'Rcon > ' . $cmd . self::Handle_Font);
+        $UnicodeFont = $this->getConfig()->get('UnicodeFont');
+        $Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : '');
+        $this->getLogger()->info('[' . $prefix . '] ' . 'Rcon > ' . $cmd . $Handle_Variable_UnicodeFont);
         $trackers = $this->getConfig()->get('Trackers');
         foreach ($trackers as $tracker) {
             $tracker = $this->getServer()->getPlayer($tracker);

@@ -47,6 +47,9 @@ How to setup? Very simple! Follow the steps below:
 ## config.yml
 ```
 ---
+#Set UnicodeFont: true to UnicodeFont: false if you don't want to track messages converted to unicode fonts
+UnicodeFont: true #UnicodeFont: true (Recomend using)
+
 DeleteHistory:
 #Set onEnable: true if you want to clear the player's command usage history when the server enable.
 #Set onEnable: false if you don't want to clear the player's command usage history when the server enable.
@@ -65,6 +68,7 @@ Trackers:
   - Steve
   - Alex
 ...
+
 ```
 ## history.yml
 ```

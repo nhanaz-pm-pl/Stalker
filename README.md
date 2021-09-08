@@ -1,6 +1,6 @@
 <img src="https://github.com/NhanAZ/Track/blob/main/images/NhanAZ.gif" />
 
-<h1>Track<img src="https://github.com/NhanAZ/Track/blob/main/images/icon.png" height="64" width="64"  align="left"></img></h1><br/>
+<h1>Track<img src="https://github.com/NhanAZ/Track/blob/main/icon.png" height="64" width="64"  align="left"></img></h1><br/>
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 

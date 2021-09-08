@@ -43,9 +43,9 @@ use function vsprintf;
 class UpdateNotifyTask extends AsyncTask{
 
 	/** @var string */
-	public const POGGIT_RELEASES_URL = "https://poggit.pmmp.io/releases.min.json?name=";
+	private const POGGIT_RELEASES_URL = "https://poggit.pmmp.io/releases.min.json?name=";
 
-	public function __construct(string $pluginName, string $pluginVersion){
+	public function __construct(private string $pluginName, private string $pluginVersion){
 	}
 
 	public function onRun() : void{

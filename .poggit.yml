@@ -8,8 +8,8 @@ projects:
     icon: icon.png
     lint:
       closeTag: false
-			directStdout: false
-			nonPsr: false
-			syntaxError: false
-			phpstan: false
+      directStdout: false
+      nonPsr: false
+      syntaxError: false
+      phpstan: false
 ...

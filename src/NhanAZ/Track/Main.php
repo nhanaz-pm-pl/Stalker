@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener
         $this->getLogger()->info("{$name} > {$cmd}");
         $trackers = $this->getConfig()->get('Trackers');
         foreach ($trackers as $tracker) {
-            $tracker = $this->getServer()->getPlayerByPrefix($tracker);
+            $tracker = Server::getInstance()->getPlayerByPrefix($tracker);
             if ($tracker) {
                 (string) $prefix = $this->getDescription()->getPrefix();
                 $UnicodeFont = $this->getConfig()->get('UnicodeFont');

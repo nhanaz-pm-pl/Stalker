@@ -74,8 +74,8 @@ Trackers:
 ```
 ---
 #This is where the system will save the command usage history.
-'Wed 18/08/2021 03:57:24(AM) : Console': say Hi.
-'Wed 18/08/2021 03:57:31(AM) : Console': say This is a feature to save the history
+'Wed 18/08/2021 03:57:24(AM) : CONSOLE': say Hi.
+'Wed 18/08/2021 03:57:31(AM) : CONSOLE': say This is a feature to save the history
   of using the command.
 ...
 ```

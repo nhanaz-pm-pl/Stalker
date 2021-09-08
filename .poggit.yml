@@ -10,6 +10,6 @@ projects:
       closeTag: true
       directStdout: true
       nonPsr: true
-      syntaxError: false
+      syntaxError: true
       phpstan: false
 ...

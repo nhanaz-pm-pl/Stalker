@@ -11,5 +11,5 @@ projects:
       directStdout: true
       nonPsr: true
       syntaxError: true
-      phpstan: false
+      phpstan: true
 ...

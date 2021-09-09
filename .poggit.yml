@@ -8,7 +8,7 @@ projects:
     icon: icon.png
     lint:
       closeTag: true
-      directStdout: true
+      directStdout: false
       nonPsr: false
       syntaxError: false
       phpstan: false

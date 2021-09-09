@@ -29,9 +29,10 @@ How to setup? Very simple! Follow the steps below:
 # Future
 - [X] Save the history of players using the command.
 - [X] Convert tracking notifications to Unicode fonts
-- [ ] Update UI to make it easier to review someone's command usage history over a different period of time.
+- [X] Log the use of commands used by players.
+- [ ] UI Form for editing config.
 - [ ] Connect with Discord.
-- [ ] Connect with Messenger.
+- [ ] Connect with Messenger?
 - [ ] And many other features recommended by plugin users, etc.
 
 # Images

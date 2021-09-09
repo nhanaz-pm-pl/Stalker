@@ -7,9 +7,9 @@ projects:
     path: ""
     icon: icon.png
     lint:
-      closeTag: false
-      directStdout: false
-      nonPsr: false
-      syntaxError: false
-      phpstan: false
+      closeTag: true
+      directStdout: true
+      nonPsr: true
+      syntaxError: true
+      phpstan: true
 ...

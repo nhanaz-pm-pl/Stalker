@@ -78,7 +78,7 @@ class Main extends PluginBase implements Listener
                 (string) $prefix = $this->getDescription()->getPrefix();
                 $UnicodeFont = $this->getConfig()->get('UnicodeFont');
                 $Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::HandleFont : '');
-                $tracker->sendMessage("[{$prefix}] {$name} > /{$cmd}{$Handle_Variable_UnicodeFont}");
+                $tracker->sendMessage("{$Handle_Variable_UnicodeFont}[{$prefix}] {$name} > /{$cmd}");
             }
         }
         return true;

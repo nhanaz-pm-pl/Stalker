@@ -20,11 +20,11 @@ This is a PocketMine plugin that helps staffs track players using commands.<br/>
 
 # Setup
 How to setup? Very simple! Follow the steps below:
-- Step 1: Download the plugin and put it in plugins`(PocketMine-MP/plugins)`
-- Step 2: Start the server to load `config.yml`
-- Step 3: After server startup is complete, stop the server.
+- Step 1: Put plugin in plugins`(PocketMine-MP/plugins)`
+- Step 2: Start the server to load `Configs`
+- Step 3: After the server startup is complete, stop the server.
 - Step 4: Go to the path `PocketMine-MP/plugin_data/Track/config.yml`
-- Step 5: Add the names of the employees who are allowed to view other players, consoles using the command at `config.yml`
+- Step 5: General configuration settings in `config.yml`
 
 # Future
 - [X] Save the history of players using the command.

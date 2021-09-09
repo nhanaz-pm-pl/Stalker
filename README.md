@@ -1,4 +1,4 @@
-<img src="https://github.com/NhanAZ/Track/blob/main/images/NhanAZ.gif" />
+<!-- <img src="https://github.com/NhanAZ/Track/blob/main/images/NhanAZ.gif" /> -->
 
 <h1>Track<img src="https://github.com/NhanAZ/Track/blob/main/icon.png" height="64" width="64"  align="left"></img></h1><br/>
 

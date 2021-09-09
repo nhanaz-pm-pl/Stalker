@@ -9,7 +9,7 @@ projects:
     lint:
       closeTag: true
       directStdout: true
-      nonPsr: true
+      nonPsr: false
       syntaxError: false
       phpstan: false
 ...

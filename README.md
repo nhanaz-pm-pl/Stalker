@@ -6,11 +6,13 @@
 
 This is a PocketMine plugin that helps staffs track players using commands.<br/>
 
+<!--
 <!-- <div align="center"> -->
 <a href="https://poggit.pmmp.io/r/136167/Track.phar" target="_blank" title="Click to download the plugin">
   <img src="https://github.com/NhanAZ/Track/blob/main/images/download.png" </img>
 </a>
 <!-- </div> -->
+-->
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.

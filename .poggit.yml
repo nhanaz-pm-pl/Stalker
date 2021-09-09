@@ -7,7 +7,7 @@ projects:
     path: ""
     icon: icon.png
     lint:
-      closeTag: true
+      closeTag: false
       directStdout: false
       nonPsr: false
       syntaxError: false

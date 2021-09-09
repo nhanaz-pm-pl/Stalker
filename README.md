@@ -18,7 +18,7 @@ This is a PocketMine plugin that helps staffs track players using commands.<br/>
 - Selected people are allowed to see console or rcon commands and players used.
 - The console is allowed to see the commands the player uses.
 
-# Setup
+# Setups
 How to setup? Very simple! Follow the steps below:
 - Step 1: Put plugin in plugins`(PocketMine-MP/plugins)`
 - Step 2: Start the server to load `Configs`
@@ -26,7 +26,7 @@ How to setup? Very simple! Follow the steps below:
 - Step 4: Go to the path `PocketMine-MP/plugin_data/Track/config.yml`
 - Step 5: General configuration settings in `config.yml`
 
-# Future
+# Futures
 - [X] Save the history of players using the command.
 - [X] Convert tracking notifications to Unicode fonts
 - [X] Log the use of commands used by players.
@@ -81,7 +81,7 @@ Trackers:
 ...
 ```
 
-# Contact
+# Contacts
 If you encounter an error or would like to contribute to my plugin, contact me via the platforms below:
 - Discord: NhanAZ#9115
 - Xbox: NhanAZ

@@ -4,7 +4,7 @@ prefix: Track
 author: NhanAZ
 version: 0.0.7
 main: NhanAZ\Track\Main
-api: [3.22.4, 4.0.0-BETA2]
+api: 4.0.0
 authors: [Nexus9265, Mcbeany]
 src-namespace-prefix: NhanAZ\Track
 website: https://github.com/NhanAZ

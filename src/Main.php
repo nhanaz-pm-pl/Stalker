@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
-use pocketmine\{
-    Server,
-    utils\Config,
-    event\Listener,
-    utils\TextFormat,
-    plugin\PluginBase,
-    event\server\CommandEvent,
-    event\player\PlayerCommandPreprocessEvent};
+use pocketmine\Server;
+use pocketmine\utils\Config;
+use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat;
+use pocketmine\plugin\PluginBase;
+use pocketmine\event\server\CommandEvent;
 use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 
 class Main extends PluginBase implements Listener

@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener
 
     public $history;
 
-    public function onLoad() : void 
+    public function onLoad() : void
     {
         $description = $this->getDescription()->getName();
         $version =  $this->getDescription()->getVersion();
@@ -30,7 +30,7 @@ class Main extends PluginBase implements Listener
     public function InvalidConfig() : void
     {
         $this->history->save();
-        $NoticeRemoved = $this->getConfig()->get('NoticeRemoved', self::InvalidConfig);
+        $NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
         $this->getLogger()->info($NoticeRemoved);
     }
 
@@ -45,17 +45,17 @@ class Main extends PluginBase implements Listener
     {
         $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->saveResource('history.yml');
-        $this->history = new Config($this->getDataFolder().'history.yml', Config::YAML);
-        if ($this->getConfig()->get('DeleteHistory')['onEnable'] == true) {
+        $this->saveResource("history.yml");
+        $this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
+        if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {
             $this->RemoveConfig();
             $this->InvalidConfig();
-        } 
+        }
     }
 
     public function onDisable() : void
     {
-        if ($this->getConfig()->get('DeleteHistory')['onDisable'] == true) {
+        if ($this->getConfig()->get("DeleteHistory")["onDisable"] == true) {
             $this->RemoveConfig();
             $this->InvalidConfig();
         }
@@ -64,18 +64,18 @@ class Main extends PluginBase implements Listener
     public function onCommandEvent(CommandEvent $event)
     {
         $cmd = $event->getCommand();
-        $time = date('D d/m/Y H:i:s(A)');
+        $time = date("D d/m/Y H:i:s(A)");
         $name = $event->getSender()->getName();
         $this->history->set("{$time} : {$name}", $cmd);
         $this->history->save();
         $this->getLogger()->info("{$name} > /{$cmd}");
-        $trackers = $this->getConfig()->get('Trackers');
+        $trackers = $this->getConfig()->get("Trackers");
         foreach ($trackers as $tracker) {
             $tracker = $this->getServer()->getPlayerByPrefix($tracker);
             if ($tracker) {
                 (string) $prefix = $this->getDescription()->getPrefix();
-                $UnicodeFont = $this->getConfig()->get('UnicodeFont');
-                $Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::HandleFont : '');
+                $UnicodeFont = $this->getConfig()->get("UnicodeFont");
+                $Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::HandleFont : "");
                 $tracker->sendMessage("{$Handle_Variable_UnicodeFont}[{$prefix}] {$name} > /{$cmd}");
             }
         }

@@ -1,18 +1,6 @@
-<!-- <img src="https://github.com/NhanAZ/Track/blob/main/images/NhanAZ.gif" /> -->
-
-<h1>Track<img src="https://github.com/NhanAZ/Track/blob/main/icon.png" height="64" width="64"  align="left"></img></h1><br/>
-
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
 This is a PocketMine plugin that helps staffs track players using commands.<br/>
-
-<!--
-//<div align="center">
-  <a href="https://poggit.pmmp.io/r/136167/Track.phar" target="_blank" title="Click to download the plugin">
-    <img src="https://github.com/NhanAZ/Track/blob/main/images/download.png" </img>
-  </a>
-//</div>
--->
 
 
 # Features

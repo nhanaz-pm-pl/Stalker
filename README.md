@@ -20,13 +20,13 @@ How to setup? Very simple! Follow the steps below:
 - Step 5: General configuration settings in `config.yml`
 
 # Futures
-- [X] Save the history of players using the command.
-- [X] Convert tracking notifications to Unicode fonts
-- [X] Log the use of commands used by players.
-- [ ] UI Form for editing config.
-- [ ] Connect with Discord.
-- [ ] Connect with Messenger?
-- [ ] And many other features recommended by plugin users, etc.
+[X] Save the history of players using the command.
+[X] Convert tracking notifications to Unicode fonts
+[X] Log the use of commands used by players.
+[ ] UI Form for editing config.
+[ ] Connect with Discord.
+[ ] Connect with Messenger?
+[ ] And many other features recommended by plugin users, etc.
 
 # Images
 <div align="center"> <b>Tracking screen in-game</b> </div>

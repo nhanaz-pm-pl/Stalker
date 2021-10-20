@@ -76,7 +76,6 @@ Trackers:
 # Contacts
 If you encounter an error or would like to contribute to my plugin, contact me via the platforms below:
 - Discord: NhanAZ#9115
-- Xbox: NhanAZ
 - Zalo: @thanhnhanaz
 - FaceBook: fb.com/thanhnhanaz
 

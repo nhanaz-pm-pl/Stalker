@@ -1,10 +1,9 @@
 ---
 name: Track
-prefix: Track
 author: NhanAZ
 version: 0.0.7
+api: [3.0.0, 3.25.0]
 main: NhanAZ\Track\Main
-api: 3.25.0
 authors: [Nexus9265, Mcbeany]
 website: https://github.com/NhanAZ
 description: Help staffs track players using commands.

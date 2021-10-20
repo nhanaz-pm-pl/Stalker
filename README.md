@@ -2,7 +2,7 @@
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
-This is a plugin written in PHP programming language and running on PocketMine platform that works stably at API [3.0.0 - 3.25.0] It allows staff to track the commands players use.<br/>
+This is a plugin written in PHP programming language and running on PocketMine platform that works stably at API [4.0.0] It allows staff to track the commands players use.<br/>
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.

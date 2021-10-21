@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener
 
 	public CONST Handle_Font = TextFormat::ESCAPE . "　";
 
-	public $history;
+	public CONST $history;
 
 	public function onLoad() : void
 	{
@@ -68,10 +68,9 @@ class Main extends PluginBase implements Listener
 			foreach ($trackers as $tracker) {
 				$tracker = $this->getServer()->getPlayer($tracker);
 				if ($tracker) {
-					$prefix = $this->getDescription()->getPrefix();
 					$UnicodeFont = $this->getConfig()->get("UnicodeFont");
 					$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-					$tracker->sendMessage("[" . $prefix . "] " . $name . " > " . $cmd . $Handle_Variable_UnicodeFont);
+					$tracker->sendMessage("[Track] " . $name . " > " . $cmd . $Handle_Variable_UnicodeFont);
 					$time = date("D d/m/Y H:i:s(A)");
 					$this->history->set($time . " : " . $name, $cmd);
 					$this->history->save();
@@ -93,10 +92,9 @@ class Main extends PluginBase implements Listener
 		foreach ($trackers as $tracker) {
 			$tracker = $this->getServer()->getPlayer($tracker);
 			if ($tracker) {
-				$prefix = $this->getDescription()->getPrefix();
 				$UnicodeFont = $this->getConfig()->get("UnicodeFont");
 				$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-				$tracker->sendMessage("[" . $prefix . "] " . "Console > " . $cmd . $Handle_Variable_UnicodeFont);
+				$tracker->sendMessage("[Track] " . "Console > " . $cmd . $Handle_Variable_UnicodeFont);
 			}
 		}
 		return true;
@@ -109,10 +107,9 @@ class Main extends PluginBase implements Listener
 		$time = date("D d/m/Y H:i:s(A)");
 		$this->history->set($time . " : Rcon", $cmd);
 		$this->history->save();
-		$prefix = $this->getDescription()->getPrefix();
 		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
 		$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-		$this->getLogger()->info("[" . $prefix . "] " . "Rcon > " . $cmd . $Handle_Variable_UnicodeFont);
+		$this->getLogger()->info("[Track] " . "Rcon > " . $cmd . $Handle_Variable_UnicodeFont);
 		$trackers = $this->getConfig()->get("Trackers");
 		foreach ($trackers as $tracker) {
 			$tracker = $this->getServer()->getPlayer($tracker);

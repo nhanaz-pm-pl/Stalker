@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener
 
 	public CONST Handle_Font = TextFormat::ESCAPE . "　";
 
-	public CONST $history;
+	public $history;
 
 	public function onLoad() : void
 	{

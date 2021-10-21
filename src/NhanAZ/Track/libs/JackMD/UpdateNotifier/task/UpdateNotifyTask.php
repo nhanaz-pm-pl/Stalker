@@ -36,6 +36,7 @@ namespace NhanAZ\Track\libs\JackMD\UpdateNotifier\task;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 use pocketmine\utils\Internet;
+use function is_array;
 use function json_decode;
 use function version_compare;
 use function vsprintf;
@@ -43,9 +44,16 @@ use function vsprintf;
 class UpdateNotifyTask extends AsyncTask{
 
 	/** @var string */
-	private const POGGIT_RELEASES_URL = "https://poggit.pmmp.io/releases.min.json?name=";
+	private const POGGIT_RELEASES_URL = "https://poggit.pmmp.io/releases.json?name=";
 
-	public function __construct(private string $pluginName, private string $pluginVersion){
+	/** @var string */
+	private $pluginName;
+	/** @var string */
+	private $pluginVersion;
+
+	public function __construct(string $pluginName, string $pluginVersion){
+		$this->pluginName = $pluginName;
+		$this->pluginVersion = $pluginVersion;
 	}
 
 	public function onRun() : void{
@@ -53,8 +61,12 @@ class UpdateNotifyTask extends AsyncTask{
 		$highestVersion = $this->pluginVersion;
 		$artifactUrl = "";
 		$api = "";
-		if($json !== null){
-			$releases = json_decode($json->getBody(), true);
+		if($json !== false){
+			$releases = json_decode($json, true);
+			if($releases === null || !is_array($releases) || !$releases){
+				$this->setResult([null, null, null, $err ?? "Unable to resolve host: " . self::POGGIT_RELEASES_URL . $this->pluginName]);
+				return;
+			}
 			foreach($releases as $release){
 				if(version_compare($highestVersion, $release["version"], ">=")){
 					continue;
@@ -68,17 +80,17 @@ class UpdateNotifyTask extends AsyncTask{
 		$this->setResult([$highestVersion, $artifactUrl, $api, $err]);
 	}
 
-
-	public function onCompletion() : void{
+	public function onCompletion(Server $server) : void{
 		$plugin = Server::getInstance()->getPluginManager()->getPlugin($this->pluginName);
+
 		if($plugin === null){
 			return;
 		}
 
 		[$highestVersion, $artifactUrl, $api, $err] = $this->getResult();
-		if($err !== null){
-			$plugin->getLogger()->error("Update notify error: $err");
 
+		if($err !== null){
+			$plugin->getLogger()->error("Update notify error: " . $err);
 			return;
 		}
 

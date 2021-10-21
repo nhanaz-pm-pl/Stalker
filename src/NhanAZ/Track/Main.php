@@ -16,7 +16,7 @@ use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 class Main extends PluginBase implements Listener
 {
 
-	public CONST InvalidConfig = "Invalid config. Please check config.yml again. Thank you.";
+	public CONST InvalidConfig = "Invalid config! Please check config.yml again!";
 
 	public CONST Handle_Font = TextFormat::ESCAPE . "　";
 

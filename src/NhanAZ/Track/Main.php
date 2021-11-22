@@ -62,20 +62,8 @@ class Main extends PluginBase implements Listener
 	{
 		$name = $event->getPlayer()->getName();
 		$cmd = $event->getMessage();
-		if ($cmd[0] == "/") {
-		$this->getLogger()->info($name . " > " . $cmd);
-		$trackers = $this->getConfig()->get("Trackers");
-			foreach ($trackers as $tracker) {
-				$tracker = $this->getServer()->getPlayer($tracker);
-				if ($tracker) {
-					$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-					$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-					$tracker->sendMessage("[Track] " . $name . " > " . $cmd . $Handle_Variable_UnicodeFont);
-					$time = date("D d/m/Y H:i:s(A)");
-					$this->history->set($time . " : " . $name, $cmd);
-					$this->history->save();
-				}
-			}
+		if ($cmd[0] === "/") {
+			$this->track($name, substr($cmd, 1));
 		}
 		return true;
 
@@ -83,40 +71,30 @@ class Main extends PluginBase implements Listener
 
 	public function onServerCommand(ServerCommandEvent $event)
 	{
-		$cmd = $event->getCommand();
-		$time = date("D d/m/Y H:i:s(A)");
-		$this->history->set($time . " : Console", $cmd);
-		$this->history->save();
-		$this->getLogger()->info("Console > " . $cmd);
-		$trackers = $this->getConfig()->get("Trackers");
-		foreach ($trackers as $tracker) {
-			$tracker = $this->getServer()->getPlayer($tracker);
-			if ($tracker) {
-				$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-				$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-				$tracker->sendMessage("[Track] " . "Console > " . $cmd . $Handle_Variable_UnicodeFont);
-			}
-		}
+		$cmd = $event->getCommand()->getName();
+		$this->track("Console", $cmd);
 		return true;
 
 	}
 
 	public function onRemoteCommand(RemoteServerCommandEvent $event)
 	{
-		$cmd = $event->getCommand();
+		$cmd = $event->getCommand()->getName();
+		$this->track("Rcon", $cmd);
+		return true;
+	}
+	
+	public function track(string $sender, string $cmd) : void {
 		$time = date("D d/m/Y H:i:s(A)");
-		$this->history->set($time . " : Rcon", $cmd);
+		$this->history->set($time . " : " . $sender . ", $cmd);
 		$this->history->save();
 		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
 		$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-		$this->getLogger()->info("[Track] " . "Rcon > " . $cmd . $Handle_Variable_UnicodeFont);
-		$trackers = $this->getConfig()->get("Trackers");
-		foreach ($trackers as $tracker) {
-			$tracker = $this->getServer()->getPlayer($tracker);
-			if ($tracker) {
-			$tracker->sendMessage("Rcon > " . $cmd);
+		$this->getLogger()->info("[Track] " . $sender . " > " . $cmd . $Handle_Variable_UnicodeFont);
+		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
+			if ($tracker->hasPermission("track.tracker")) {
+				$tracker->sendMessage("Rcon > " . $cmd);
 			}
 		}
-		return true;
 	}
 }

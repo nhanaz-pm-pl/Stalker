@@ -7,4 +7,11 @@ main: NhanAZ\Track\Main
 authors: [Nexus9265, Mcbeany]
 website: https://github.com/NhanAZ
 description: Help staffs track players using commands.
+
+permissions:
+  track:
+    default: op
+    children:
+      track.tracker:
+        default: Poeple with this permission are authorized to follow the player using the command
 ...

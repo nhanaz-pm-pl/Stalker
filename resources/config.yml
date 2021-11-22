@@ -13,10 +13,4 @@ DeleteHistory:
 
 #This is the message when the command usage history has been cleared.
 NoticeRemoved: "Removed player command usage history (Disabled at config.yml)"
-
-#Please enter the names of the staff who are authorized to follow the player using the command as the format is present below.
-Trackers:
-  - NhanAZ
-  - Steve
-  - Alex
 ...

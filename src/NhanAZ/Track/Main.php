@@ -8,8 +8,7 @@ use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
-use pocketmine\event\server\ServerCommandEvent;
-use pocketmine\event\server\RemoteServerCommandEvent;
+use pocketmine\event\server\CommandEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 
@@ -69,19 +68,12 @@ class Main extends PluginBase implements Listener
 
 	}
 
-	public function onServerCommand(ServerCommandEvent $event)
+	public function onCommand(CommandEvent $event)
 	{
-		$cmd = $event->getCommand()->getName();
-		$this->track("Console", $cmd);
+		$cmd = $event->getCommand();
+		$this->track($event->getSender()->getName(), $cmd);
 		return true;
 
-	}
-
-	public function onRemoteCommand(RemoteServerCommandEvent $event)
-	{
-		$cmd = $event->getCommand()->getName();
-		$this->track("Rcon", $cmd);
-		return true;
 	}
 	
 	public function track(string $sender, string $cmd) : void {

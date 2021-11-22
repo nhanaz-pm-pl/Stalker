@@ -86,7 +86,7 @@ class Main extends PluginBase implements Listener
 	
 	public function track(string $sender, string $cmd) : void {
 		$time = date("D d/m/Y H:i:s(A)");
-		$this->history->set($time . " : " . $sender . ", $cmd);
+		$this->history->set($time . " : " . $sender . "," . $cmd);
 		$this->history->save();
 		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
 		$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");

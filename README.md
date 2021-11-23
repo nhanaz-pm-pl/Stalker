@@ -1,8 +1,11 @@
 # General
 
-[![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track) [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
+[![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track)
+[![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track)
+[![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track)
+[![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 
-This is a plugin written in PHP programming language and running on PocketMine platform that works stably at API 3.25.0 It allows staff to track the commands players use.<br/>
+This is a plugin written in PHP programming language and running on PocketMine platform that works stably at API 3.25.0 It allows staff to track the commands players use.<br>
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.
@@ -17,6 +20,12 @@ How to setup? Very simple! Follow the steps below:
 - Step 3: After the server startup is complete, stop the server.
 - Step 4: Go to the path `PocketMine-MP/plugin_data/Track/config.yml`
 - Step 5: General configuration settings in `config.yml`
+
+# Permissions
+| Permission      | Description                                                                       |
+| ----------------| --------------------------------------------------------------------------------- |
+| `track`         | Allows to use all existing functions of the plugin                                |
+| `track.tracker` | Poeple with this permission are authorized to follow the player using the command |
 
 # Futures
 - [X] Save the history of players using the command.

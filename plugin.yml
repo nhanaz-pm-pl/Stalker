@@ -14,6 +14,7 @@ description: Help staffs track players using commands.
 permissions:
   track:
     default: op
+    description: Allows to use all existing functions of the plugin
     children:
       track.tracker:
         description: Poeple with this permission are authorized to follow the player using the command

@@ -75,14 +75,15 @@ class Main extends PluginBase implements Listener
 		return true;
 
 	}
-	
+
 	public function track(string $sender, string $cmd) : void {
 		$time = date("D d/m/Y H:i:s(A)");
 		$this->history->set($time . " : " . $sender . "," . $cmd);
 		$this->history->save();
 		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-		$Handle_Variable_UnicodeFont = ($UnicodeFont == true ? self::Handle_Font : "");
-		$this->getLogger()->info("[Track] " . $sender . " > " . $cmd . $Handle_Variable_UnicodeFont);
+		// $HVU = $Handle_Variable_UnicodeFont
+		$HVU = ($UnicodeFont == true ? self::Handle_Font : "");
+		$this->getLogger()->info("[Track] " . $sender . " > " . $cmd . $HVU);
 		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {
 				$tracker->sendMessage($sender . " > " . $cmd);

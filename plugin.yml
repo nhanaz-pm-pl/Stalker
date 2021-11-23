@@ -17,5 +17,5 @@ permissions:
     description: Allows to use all existing functions of the plugin
     children:
       track.tracker:
-        description: Poeple with this permission are authorized to follow the player using the command
+        description: People with this permission are authorized to follow the player using the command
 ...

@@ -25,7 +25,7 @@ How to setup? Very simple! Follow the steps below:
 | Permission      | Description                                                                       |
 | ----------------| --------------------------------------------------------------------------------- |
 | `track`         | Allows to use all existing functions of the plugin                                |
-| `track.tracker` | Poeple with this permission are authorized to follow the player using the command |
+| `track.tracker` | People with this permission are authorized to follow the player using the command |
 
 # Futures
 - [X] Save the history of players using the command.
@@ -34,6 +34,7 @@ How to setup? Very simple! Follow the steps below:
 - [ ] UI Form for editing config.
 - [ ] Connect with Discord.
 - [ ] Connect with Messenger?
+- [ ] Add related statistical data
 - [ ] And many other features recommended by plugin users, etc.
 
 # Images

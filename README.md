@@ -34,7 +34,8 @@ How to setup? Very simple! Follow the steps below:
 - [ ] UI Form for editing config.
 - [ ] Connect with Discord.
 - [ ] Connect with Messenger?
-- [ ] Add related statistical data
+- [ ] Add related statistical data.
+- [ ] Sign Track.
 - [ ] And many other features recommended by plugin users, etc.
 
 # Images

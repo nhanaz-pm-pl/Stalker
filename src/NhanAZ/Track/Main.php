@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
-use pocketmine\utils\Config;
 use pocketmine\event\Listener;
-use pocketmine\utils\TextFormat;
 use pocketmine\plugin\PluginBase;
+
+use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat;
+
 use pocketmine\event\server\CommandEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
+
 use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 
 class Main extends PluginBase implements Listener
@@ -17,7 +20,7 @@ class Main extends PluginBase implements Listener
 
 	public CONST InvalidConfig = "Invalid config! Please check config.yml again!";
 
-	public CONST Handle_Font = TextFormat::ESCAPE . "　";
+	public CONST HandleFont = TextFormat::ESCAPE . "　";
 
 	public $history;
 
@@ -82,7 +85,7 @@ class Main extends PluginBase implements Listener
 		$this->history->save();
 		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
 		// $HVU = $Handle_Variable_UnicodeFont
-		$HVU = ($UnicodeFont == true ? self::Handle_Font : "");
+		$HVU = ($UnicodeFont == true ? self::HandleFont : "");
 		$this->getLogger()->info("[Track] " . $sender . " > " . $cmd . $HVU);
 		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {
@@ -90,4 +93,5 @@ class Main extends PluginBase implements Listener
 			}
 		}
 	}
+
 }

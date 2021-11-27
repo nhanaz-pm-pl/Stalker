@@ -3,7 +3,7 @@ name: Track
 author: NhanAZ
 version: 0.0.8
 api: [3.25.0]
-main: NhanAZ\Track\Mai
+main: NhanAZ\Track\Main
 authors:
   - Nexus9265
   - Mcbeany

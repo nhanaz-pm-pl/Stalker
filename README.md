@@ -4,6 +4,7 @@
 [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
+[![Poggit-CI](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)
 
 This is a plugin written in PHP programming language and running on PocketMine platform that works stably at API 3.25.0 It allows staff to track the commands players use.<br>
 

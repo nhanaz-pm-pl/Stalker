@@ -61,7 +61,7 @@ class Main extends PluginBase implements Listener
 		}
 	}
 
-	public function onCommandEvent(CommandEvent $event)
+	public function onCommandEvent(CommandEvent $event) : void
 	{
 		$cmd = $event->getCommand();
 

@@ -17,6 +17,8 @@ class Main extends PluginBase implements Listener
 
 	public const InvalidConfig = "NoticeRemoved in config.yml doesn't exist";
 	public const HandleFont = TF::ESCAPE . "　";
+	
+	public $history = [];
 
 	public function onLoad() : void
 	{

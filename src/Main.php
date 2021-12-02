@@ -10,7 +10,6 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
-use NhanAZ\Track\libs\JackMD\UpdateNotifier\UpdateNotifier;
 
 class Main extends PluginBase implements Listener
 {

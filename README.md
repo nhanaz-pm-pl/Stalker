@@ -6,6 +6,7 @@
 [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 [![Poggit-CI](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)
+[![PHPStan](https://github.com/nhanaz-pm-pl/Track/actions/workflows/main.yml/badge.svg)](https://github.com/nhanaz-pm-pl/Track/actions/workflows/main.yml/badge.svg)
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.

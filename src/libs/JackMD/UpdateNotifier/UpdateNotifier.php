@@ -45,7 +45,8 @@ class UpdateNotifier{
 	 * @param string $pluginName
 	 * @param string $pluginVersion
 	 */
-	public static function checkUpdate(string $pluginName, string $pluginVersion){
+	public static function checkUpdate(string $pluginName, string $pluginVersion) : void{
 		Server::getInstance()->getAsyncPool()->submitTask(new UpdateNotifyTask($pluginName, $pluginVersion));
 	}
+
 }

@@ -1,12 +1,11 @@
 # General
+**A plugin that allows staff to track the commands players use**
 
 [![](https://poggit.pmmp.io/shield.state/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
 [![Poggit-CI](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)
-
-This is a plugin written in PHP programming language and running on PocketMine platform that works stably at API 3.25.0 It allows staff to track the commands players use.<br>
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.
@@ -15,7 +14,8 @@ This is a plugin written in PHP programming language and running on PocketMine p
 - The console is allowed to see the commands the player uses.
 
 # Setups
-How to setup? Very simple! Follow the steps below:
+**How to setup? Very simple! Follow the steps below**
+
 - Step 1: Put plugin in plugins`(PocketMine-MP/plugins)`
 - Step 2: Start the server to load `Configs`
 - Step 3: After the server startup is complete, stop the server.
@@ -23,10 +23,9 @@ How to setup? Very simple! Follow the steps below:
 - Step 5: General configuration settings in `config.yml`
 
 # Permissions
-| Permission      | Description                                                                       |
-| ----------------| --------------------------------------------------------------------------------- |
-| `track`         | Allows to use all existing functions of the plugin                                |
-| `track.tracker` | People with this permission are authorized to follow the player using the command |
+| Permission      | Description                                                              |
+| ----------------| ------------------------------------------------------------------------ |
+| `track.tracker` | People with this permission are authorized to track player using command |
 
 # Futures
 - [X] Save the history of players using the command.
@@ -80,10 +79,15 @@ NoticeRemoved: "Removed player command usage history (Disabled at config.yml)"
 ```
 
 # Contacts
-If you encounter an error or would like to contribute to my plugin, contact me via the platforms below:
-- Discord: NhanAZ#9115
-- Zalo: @thanhnhanaz
-- FaceBook: fb.com/thanhnhanaz
+**You can contact me directly through the platforms listed below**
+| Platform | Contact            |
+| -------- | ------------------ |
+| Discord  | NhanAZ#9115        |
+| Email    | NhanAZ@pm.me       |
+| Twitter  | @ThanhNhanAZ       |
+| Zalo     | @ThanhNhanAZ       |
+| FaceBook | fb.com/ThanhNhanAZ |
+
 
 # License
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html)
+[**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.html)

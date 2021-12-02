@@ -10,13 +10,14 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
+use JackMD\UpdateNotifier\UpdateNotifier;
 
 class Main extends PluginBase implements Listener
 {
 
 	public const InvalidConfig = "NoticeRemoved in config.yml doesn't exist";
 	public const HandleFont = TF::ESCAPE . "　";
-	
+
 	public $history;
 
 	public function onLoad() : void

@@ -4,8 +4,7 @@
       "phpstan/phpstan": "^0.12.18",
       "pocketmine/pocketmine-mp": "^3.0",
       "phpstan/phpstan-strict-rules": "^0.12.2",
-      "phpstan/extension-installer": "^1.0",
-      "ifera-mc/updatenotifier": "^2.1.0"
+      "phpstan/extension-installer": "^1.0"
    },
    "autoload": {
       "psr-4": {

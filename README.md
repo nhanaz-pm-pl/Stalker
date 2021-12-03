@@ -5,7 +5,7 @@
 [![](https://poggit.pmmp.io/shield.api/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl.total/Track)](https://poggit.pmmp.io/p/Track)
 [![](https://poggit.pmmp.io/shield.dl/Track)](https://poggit.pmmp.io/p/Track)
-[![Poggit-CI](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)
+[![Poggit-CI](https://poggit.pmmp.io/ci.shield/nhanaz-pm-pl/Track/Track)](https://poggit.pmmp.io/ci/nhanaz-pm-pl/Track/Track)
 
 # Features
 - Allows selected staffs to watch players use commands to facilitate support.

@@ -52,6 +52,7 @@ class Main extends PluginBase implements Listener
 	{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$missing = $this->checkVirion();
+		/** @phpstan-ignore-next-line */
 		if (! empty($missing)) {
 			foreach ($missing as $class => $name) {
 				$this->getLogger()->alert("Virion $class not found. ($name)");

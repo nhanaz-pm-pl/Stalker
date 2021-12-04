@@ -10,7 +10,6 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
-use JackMD\UpdateNotifier\UpdateNotifier;
 
 class Main extends PluginBase implements Listener
 {
@@ -34,36 +33,9 @@ class Main extends PluginBase implements Listener
 		}
 	}
 
-	public function checkVirion() : array
-	{
-		$virions = [
-			"JackMD\UpdateNotifier\UpdateNotifier" => "UpdateNotifier"
-		];
-		$missing = [];
-		foreach ($virions as $class => $name) {
-			if (! class_exists($class)) {
-				$missing[$class] = $name;
-			}
-		}
-		return $missing;
-	}
-
 	public function onEnable() : void
 	{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$missing = $this->checkVirion();
-		if (! empty($missing)) {
-			foreach ($missing as $class => $name) {
-				$this->getLogger()->alert("Virion $class not found. ($name)");
-			}
-			$this->getLogger()->alert("Please download the necessary virions for the plugin to work properly! Disabling plugin...");
-			$this->getServer()->getPluginManager()->disablePlugin($this);
-			return;
-		}
-		$description = $this->getDescription()->getName();
-		$version =  $this->getDescription()->getVersion();
-		UpdateNotifier::checkUpdate($description, $version);
-
 		$this->saveDefaultConfig();
 		$this->saveResource("history.yml");
 		$this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
@@ -92,7 +64,7 @@ class Main extends PluginBase implements Listener
 		$this->history->save();
 
 		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-		// $Handle_Variable_UnicodeFont = $HVUf;
+		/* HVUf = Handle Variable Unicode Font */
 		$HVUf = ($UnicodeFont == true ? self::HandleFont : "");
 
 		$this->getLogger()->info("{$name} > /{$cmd}");

@@ -7,6 +7,7 @@ namespace NhanAZ\Track;
 
 use RuntimeException;
 use SOFe\InfoAPI\Info;
+use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\TimeInfo;
 
 class CommandExecutionContextInfo extends Info
@@ -24,7 +25,12 @@ class CommandExecutionContextInfo extends Info
 
     public static function init() : void
     {
-
+        InfoAPI::provideInfo(
+            self::class,
+            SenderInfo::class,
+            "Track.CommandExecution.Sender",
+            fn(self $info) : SenderInfo => $info->getSender()
+        );
     }
 
     public function toString() : string

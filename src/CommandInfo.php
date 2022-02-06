@@ -22,6 +22,11 @@ class CommandInfo extends Info
         return $this->getValue()->getName();
     }
 
+    public static function init() : void
+    {
+
+    }
+
     /**
      * @return Command
      */

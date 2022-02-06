@@ -7,6 +7,7 @@ namespace NhanAZ\Track;
 
 use pocketmine\command\CommandSender;
 use SOFe\InfoAPI\Info;
+use SOFe\InfoAPI\InfoAPI;
 
 final class SenderInfo extends Info
 {
@@ -15,6 +16,11 @@ final class SenderInfo extends Info
         protected CommandSender $value
     )
     {
+    }
+
+    public static function init(?InfoAPI $api) : void
+    {
+
     }
 
     public function toString() : string

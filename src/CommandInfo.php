@@ -10,6 +10,7 @@ use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
 use function class_exists;
+use function implode;
 
 if (!class_exists(Info::class)) {
     return;
@@ -69,6 +70,14 @@ class CommandInfo extends Info
             "Track.Command.Label",
             fn(self $info) : StringInfo => new StringInfo(
                 $info->getValue()->getLabel()
+            )
+        );
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.Command.Aliases",
+            fn(self $info) : StringInfo => new StringInfo(
+                implode(", ", $info->getValue()->getAliases())
             )
         );
     }

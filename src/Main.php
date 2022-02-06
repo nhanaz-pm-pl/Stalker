@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
-use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;

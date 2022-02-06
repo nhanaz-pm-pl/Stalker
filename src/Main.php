@@ -42,6 +42,8 @@ class Main extends PluginBase implements Listener
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
+        SenderInfo::init();
+        CommandInfo::init();
 	}
 
 	public function onDisable() : void

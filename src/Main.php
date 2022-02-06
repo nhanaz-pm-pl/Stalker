@@ -47,6 +47,7 @@ class Main extends PluginBase implements Listener
         if (class_exists(InfoAPI::class)) {
             SenderInfo::init();
             CommandInfo::init();
+            CommandExecutionContextInfo::init();
         }
 	}
 

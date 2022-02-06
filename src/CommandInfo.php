@@ -55,6 +55,14 @@ class CommandInfo extends Info
                 $info->getValue()->getUsage()
             )
         );
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.Command.Permission",
+            fn(self $info) : StringInfo => new StringInfo(
+                $info->getValue()->getPermission()
+            )
+        );
     }
 
     /**

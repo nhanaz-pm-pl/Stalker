@@ -19,7 +19,7 @@ class SenderInfo extends Info
 
     public function toString() : string
     {
-        // TODO: Implement toString() method.
+        return $this->getValue()->getName();
     }
 
     /**

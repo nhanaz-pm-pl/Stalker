@@ -31,7 +31,9 @@ final class SenderInfo extends Info
             self::class,
             StringInfo::class,
             "Track.Sender.Name",
-            fn(self $info) : StringInfo => $info->getValue()->getName()
+            fn(self $info) : StringInfo => new StringInfo(
+                $info->getValue()->getName()
+            )
         );
         InfoAPI::provideFallback(
             self::class,

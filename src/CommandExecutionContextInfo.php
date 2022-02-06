@@ -12,6 +12,10 @@ use SOFe\InfoAPI\StringInfo;
 use SOFe\InfoAPI\TimeInfo;
 use function implode;
 
+if (!class_exists(Info::class)) {
+    return;
+}
+
 class CommandExecutionContextInfo extends Info
 {
 

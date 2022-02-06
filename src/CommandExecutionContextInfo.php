@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
+use RuntimeException;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\TimeInfo;
 
@@ -28,7 +29,7 @@ class CommandExecutionContextInfo extends Info
 
     public function toString() : string
     {
-        // TODO: Implement toString() method.
+        throw new RuntimeException("ContextInfo must not be returned as a provided info");
     }
 
     /**

@@ -7,6 +7,8 @@ namespace NhanAZ\Track;
 
 use pocketmine\command\Command;
 use SOFe\InfoAPI\Info;
+use SOFe\InfoAPI\InfoAPI;
+use SOFe\InfoAPI\StringInfo;
 use function class_exists;
 
 if (!class_exists(Info::class)) {
@@ -29,7 +31,14 @@ class CommandInfo extends Info
 
     public static function init() : void
     {
-
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.Command.Name",
+            fn(self $info) : StringInfo => new StringInfo(
+                $info->getValue()->getName()
+            )
+        );
     }
 
     /**

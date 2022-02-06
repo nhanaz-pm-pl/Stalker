@@ -12,7 +12,7 @@ class SenderInfo extends Info
 {
 
     public function __construct(
-        protected CommandSender $sender
+        protected CommandSender $value
     )
     {
     }
@@ -25,9 +25,9 @@ class SenderInfo extends Info
     /**
      * @return CommandSender
      */
-    public function getSender() : CommandSender
+    public function getValue() : CommandSender
     {
-        return $this->sender;
+        return $this->value;
     }
 
 }

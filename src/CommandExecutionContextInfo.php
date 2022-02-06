@@ -10,6 +10,7 @@ use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
 use SOFe\InfoAPI\TimeInfo;
+use function implode;
 
 class CommandExecutionContextInfo extends Info
 {
@@ -50,6 +51,14 @@ class CommandExecutionContextInfo extends Info
             "Track.CommandExecution.Label",
             fn(self $info) : StringInfo => new StringInfo(
                 $info->getLabel()
+            )
+        );
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.CommandExecution.Arguments",
+            fn(self $info) : StringInfo => new StringInfo(
+                implode(" ", $info->getArguments())
             )
         );
     }

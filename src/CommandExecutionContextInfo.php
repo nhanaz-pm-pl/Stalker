@@ -7,7 +7,7 @@ namespace NhanAZ\Track;
 
 use SOFe\InfoAPI\Info;
 
-class TrackedCommandInfo extends Info
+class CommandExecutionContextInfo extends Info
 {
 
     public function __construct()

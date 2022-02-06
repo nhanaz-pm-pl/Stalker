@@ -25,7 +25,7 @@ final class SenderInfo extends Info
             self::class,
             StringInfo::class,
             "Track.Sender.Name",
-            fn(self $info) => $info->getValue()->getName()
+            fn(self $info) : StringInfo => $info->getValue()->getName()
         );
     }
 

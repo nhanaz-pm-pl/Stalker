@@ -14,11 +14,11 @@ class CommandExecutionContextInfo extends Info
 {
 
     public function __construct(
-        protected SenderInfo  $sender,
-        protected TimeInfo    $time,
+        protected SenderInfo $sender,
+        protected TimeInfo $time,
         protected CommandInfo $command,
-        protected string      $label,
-        protected array       $arguments
+        protected string $label,
+        protected array $arguments
     )
     {
     }
@@ -30,6 +30,12 @@ class CommandExecutionContextInfo extends Info
             SenderInfo::class,
             "Track.CommandExecution.Sender",
             fn(self $info) : SenderInfo => $info->getSender()
+        );
+        InfoAPI::provideInfo(
+            self::class,
+            TimeInfo::class,
+            "Track.CommandExecution.Time",
+            fn(self $info) : TimeInfo => $info->getTime()
         );
     }
 

@@ -18,7 +18,7 @@ final class SenderInfo extends Info
     {
     }
 
-    public static function init(?InfoAPI $api) : void
+    public static function init() : void
     {
 
     }

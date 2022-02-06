@@ -8,7 +8,7 @@ namespace NhanAZ\Track;
 use pocketmine\command\CommandSender;
 use SOFe\InfoAPI\Info;
 
-class SenderInfo extends Info
+final class SenderInfo extends Info
 {
 
     public function __construct(

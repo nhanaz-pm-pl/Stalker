@@ -61,6 +61,7 @@ class CommandExecutionContextInfo extends Info
                 implode(" ", $info->getArguments())
             )
         );
+        // TODO: Commando support
     }
 
     public function toString() : string

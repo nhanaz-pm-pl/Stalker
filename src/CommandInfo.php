@@ -47,6 +47,14 @@ class CommandInfo extends Info
                 $info->getValue()->getDescription()
             )
         );
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.Command.Usage",
+            fn(self $info) : StringInfo => new StringInfo(
+                $info->getValue()->getUsage()
+            )
+        );
     }
 
     /**

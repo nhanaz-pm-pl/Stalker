@@ -7,6 +7,11 @@ namespace NhanAZ\Track;
 
 use pocketmine\command\Command;
 use SOFe\InfoAPI\Info;
+use function class_exists;
+
+if (!class_exists(Info::class)) {
+    return;
+}
 
 class CommandInfo extends Info
 {

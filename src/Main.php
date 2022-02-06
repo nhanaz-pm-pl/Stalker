@@ -9,6 +9,8 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
+use SOFe\InfoAPI\InfoAPI;
+use function class_exists;
 
 class Main extends PluginBase implements Listener
 {
@@ -42,8 +44,10 @@ class Main extends PluginBase implements Listener
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
-        SenderInfo::init();
-        CommandInfo::init();
+        if (class_exists(InfoAPI::class)) {
+            SenderInfo::init();
+            CommandInfo::init();
+        }
 	}
 
 	public function onDisable() : void

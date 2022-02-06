@@ -8,6 +8,7 @@ namespace NhanAZ\Track;
 use RuntimeException;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
+use SOFe\InfoAPI\StringInfo;
 use SOFe\InfoAPI\TimeInfo;
 
 class CommandExecutionContextInfo extends Info
@@ -42,6 +43,14 @@ class CommandExecutionContextInfo extends Info
             CommandInfo::class,
             "Track.CommandExecution.Command",
             fn(self $info) : CommandInfo => $info->getCommand()
+        );
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.CommandExecution.Label",
+            fn(self $info) : StringInfo => new StringInfo(
+                $info->getLabel()
+            )
         );
     }
 

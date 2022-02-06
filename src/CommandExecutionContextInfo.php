@@ -37,6 +37,12 @@ class CommandExecutionContextInfo extends Info
             "Track.CommandExecution.Time",
             fn(self $info) : TimeInfo => $info->getTime()
         );
+        InfoAPI::provideInfo(
+            self::class,
+            CommandInfo::class,
+            "Track.CommandExecution.Command",
+            fn(self $info) : CommandInfo => $info->getCommand()
+        );
     }
 
     public function toString() : string

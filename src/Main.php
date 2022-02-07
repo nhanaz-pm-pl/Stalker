@@ -106,7 +106,9 @@ class Main extends PluginBase implements Listener
             $context = new CommandExecutionContextInfo(
                 new SenderInfo($event->getSender()),
                 new TimeInfo((int)$time, (int)$microTime),
-                new CommandInfo($commandInstance),
+                $commandInstance === null
+                    ? null
+                    : new CommandInfo($commandInstance),
                 $cmd,
                 $commandFirstSpace !== false
                     ? [substr($commandTrim, $commandFirstSpace + 1)]

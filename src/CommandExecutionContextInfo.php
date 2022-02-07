@@ -23,6 +23,7 @@ final class CommandExecutionContextInfo extends Info
         protected SenderInfo $sender,
         protected TimeInfo $time,
         protected CommandInfo $command,
+        protected string $label,
         protected array $arguments
     )
     {
@@ -47,6 +48,14 @@ final class CommandExecutionContextInfo extends Info
             CommandInfo::class,
             "Track.CommandExecution.Command",
             fn(self $info) : CommandInfo => $info->getCommand()
+        );
+        InfoAPI::provideInfo(
+            self::class,
+            StringInfo::class,
+            "Track.CommandExecution.Label",
+            fn(self $info) : StringInfo => new StringInfo(
+                $info->getLabel()
+            )
         );
         InfoAPI::provideInfo(
             self::class,
@@ -88,6 +97,14 @@ final class CommandExecutionContextInfo extends Info
     public function getCommand() : CommandInfo
     {
         return $this->command;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel() : string
+    {
+        return $this->label;
     }
 
     /**

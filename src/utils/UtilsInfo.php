@@ -3,6 +3,9 @@
 
 declare(strict_types=1);
 
+namespace NhanAZ\Track\utils;
+
+use NhanAZ\Track\Main;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
@@ -17,7 +20,7 @@ class UtilsInfo extends Info
             StringInfo::class,
             "Track.Utils.UnicodeFont",
             fn(self $info) : StringInfo => new StringInfo(
-                \NhanAZ\Track\Main::HandleFont
+                Main::HandleFont
             )
         );
     }

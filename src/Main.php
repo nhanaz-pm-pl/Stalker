@@ -11,7 +11,13 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as TF;
 use SOFe\InfoAPI\InfoAPI;
+use SOFe\InfoAPI\TimeInfo;
 use function class_exists;
+use function explode;
+use function ltrim;
+use function microtime;
+use function strpos;
+use function substr;
 
 class Main extends PluginBase implements Listener
 {
@@ -71,15 +77,43 @@ class Main extends PluginBase implements Listener
 		$this->history->set("{$time} : {$name}", $cmd);
 		$this->history->save();
 
-		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-		/* HVUf = Handle Variable Unicode Font */
-		$HVUf = ($UnicodeFont == true ? self::HandleFont : "");
-
-		$this->getLogger()->info("{$name} > /{$cmd}");
+        [
+            $time,
+            $microTime
+        ] = explode(".", microtime());
+        $commandTrim = ltrim($cmd);
+        $commandInstance = $this->getServer()->getCommandMap()->getCommand(
+            substr(
+                $commandTrim,
+                0,
+                $commandFirstSpace = strpos($commandTrim, " ")
+            )
+        );
+        $this->getLogger()->info($message = InfoAPI::resolve(
+            $this->getConfig()->get("TrackMessage"),
+            $context = new CommandExecutionContextInfo(
+                new SenderInfo($event->getSender()),
+                new TimeInfo((int)$time, (int)$microTime),
+                new CommandInfo($commandInstance),
+                [substr($commandTrim, $commandFirstSpace + 1)]
+            // Making this argument array is just for backward compatibility.
+            )
+        ));
+        if (($messageToPlayer = $this->getConfig()->get(
+            "TrackMessageToPlayer",
+            null
+        )) !== null) {
+            $messageToPlayer = InfoAPI::resolve(
+                $messageToPlayer,
+                $context
+            );
+        } else {
+            $messageToPlayer = $message;
+        }
 
 		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {
-				$tracker->sendMessage("{$HVUf}[Track] {$name} > /{$cmd}");
+				$tracker->sendMessage($messageToPlayer);
 			}
 		}
 		return true;

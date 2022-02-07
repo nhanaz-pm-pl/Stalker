@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace NhanAZ\Track\utils;
 
 use NhanAZ\Track\Main;
+use RuntimeException;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
@@ -27,6 +28,8 @@ class UtilsInfo extends Info
 
     public function toString() : string
     {
-        // TODO: Implement toString() method.
+        throw new RuntimeException(
+            self::class . " must not be returned as a provided info"
+        );
     }
 }

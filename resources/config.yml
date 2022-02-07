@@ -1,6 +1,6 @@
 ---
-TrackMessage: "{Sender Name} > /{Command Name} {Arguments}"
-TrackMessageToPlayer: "{UnicodeFont}[Track] {Sender Name} > /{Command Name} {Arguments}"
+TrackMessage: "{Sender Name} > /{Label} {Arguments}"
+TrackMessageToPlayer: "{UnicodeFont}[Track] {Sender Name} > /{Label} {Arguments}"
 
 DeleteHistory:
 #Set onEnable: true if you want to clear the player's command usage history when the server enables.

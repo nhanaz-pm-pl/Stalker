@@ -95,11 +95,11 @@ class Main extends PluginBase implements Listener
         );
         $message = $this->getConfig()->get(
             "TrackMessage",
-           "{Sender Name} > /{Command Name} {Arguments}"
+           "{Sender Name} > /{Label} {Arguments}"
         );
         $messageToPlayer = $this->getConfig()->get(
             "TrackMessageToPlayer",
-           "{UnicodeFont}[Track] {Sender Name} > /{Command Name} {Arguments}"
+           "{UnicodeFont}[Track] {Label} > /{Command Name} {Arguments}"
         ) ?? $message;
 
         if (class_exists(InfoAPI::class)) {

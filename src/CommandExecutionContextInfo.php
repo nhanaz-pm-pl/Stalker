@@ -16,7 +16,7 @@ if (!class_exists(Info::class)) {
     return;
 }
 
-class CommandExecutionContextInfo extends Info
+final class CommandExecutionContextInfo extends Info
 {
 
     public function __construct(

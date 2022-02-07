@@ -16,7 +16,7 @@ if (!class_exists(Info::class)) {
     return;
 }
 
-class CommandInfo extends Info
+final class CommandInfo extends Info
 {
 
     public function __construct(

@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
-use pocketmine\utils\Config;
+use NhanAZ\Track\utils\UtilsInfo;
 use pocketmine\event\Listener;
-use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
+use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
 use SOFe\InfoAPI\InfoAPI;
 use function class_exists;
 
@@ -48,6 +49,7 @@ class Main extends PluginBase implements Listener
             SenderInfo::init();
             CommandInfo::init();
             CommandExecutionContextInfo::init();
+            UtilsInfo::init();
         }
 	}
 

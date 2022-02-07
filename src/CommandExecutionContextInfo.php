@@ -70,7 +70,9 @@ final class CommandExecutionContextInfo extends Info
 
     public function toString() : string
     {
-        throw new RuntimeException("ContextInfo must not be returned as a provided info");
+        throw new RuntimeException(
+            self::class . " must not be returned as a provided info"
+        );
     }
 
     /**

@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
+use NhanAZ\Track\utils\UtilsInfo;
 use RuntimeException;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
@@ -60,6 +61,11 @@ final class CommandExecutionContextInfo extends Info
             fn(self $info) : StringInfo => new StringInfo(
                 implode(" ", $info->getArguments())
             )
+        );
+        InfoAPI::provideFallback(
+            self::class,
+            UtilsInfo::class,
+            fn(self $info) : UtilsInfo => new UtilsInfo()
         );
         // TODO: Commando support
     }

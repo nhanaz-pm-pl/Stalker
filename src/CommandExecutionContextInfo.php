@@ -18,7 +18,7 @@ final class CommandExecutionContextInfo extends Info
     public function __construct(
         protected SenderInfo $sender,
         protected TimeInfo $time,
-        protected CommandInfo $command,
+        protected ?CommandInfo $command,
         protected string $label,
         protected array $arguments
     )
@@ -43,7 +43,7 @@ final class CommandExecutionContextInfo extends Info
             self::class,
             CommandInfo::class,
             "Track.CommandExecution.Command",
-            fn(self $info) : CommandInfo => $info->getCommand()
+            fn(self $info) : ?CommandInfo => $info->getCommand()
         );
         InfoAPI::provideInfo(
             self::class,
@@ -88,9 +88,9 @@ final class CommandExecutionContextInfo extends Info
     }
 
     /**
-     * @return CommandInfo
+     * @return CommandInfo|null
      */
-    public function getCommand() : CommandInfo
+    public function getCommand() : ?CommandInfo
     {
         return $this->command;
     }

@@ -11,10 +11,6 @@ use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
 
-if (!class_exists(Info::class)) {
-    return;
-}
-
 class UtilsInfo extends Info
 {
 

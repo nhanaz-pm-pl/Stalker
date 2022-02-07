@@ -9,12 +9,7 @@ use pocketmine\command\Command;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
-use function class_exists;
 use function implode;
-
-if (!class_exists(Info::class)) {
-    return;
-}
 
 final class CommandInfo extends Info
 {

@@ -12,10 +12,6 @@ use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\PlayerInfo;
 use SOFe\InfoAPI\StringInfo;
 
-if (!class_exists(Info::class)) {
-    return;
-}
-
 final class SenderInfo extends Info
 {
 

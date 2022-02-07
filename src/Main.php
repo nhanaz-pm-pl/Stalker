@@ -93,40 +93,45 @@ class Main extends PluginBase implements Listener
                     : strlen($commandTrim)
             )
         );
-        $message = $this->getConfig()->get("TrackMessage", null);
+        $message = $this->getConfig()->get(
+            "TrackMessage",
+           "{Sender Name} > /{Command Name} {Arguments}"
+        );
         $messageToPlayer = $this->getConfig()->get(
             "TrackMessageToPlayer",
-            null
+           "{UnicodeFont}[Track] {Sender Name} > /{Command Name} {Arguments}"
         ) ?? $message;
-        $api = class_exists(InfoAPI::class);
-        if ($message !== null) {
-            if ($api) {
-                $message = InfoAPI::resolve(
-                    (string)$message,
-                    $context = new CommandExecutionContextInfo(
-                        new SenderInfo($event->getSender()),
-                        new TimeInfo((int)$time, (int)$microTime),
-                        new CommandInfo($commandInstance),
-                        $commandFirstSpace !== false
-                            ? [substr($commandTrim, $commandFirstSpace + 1)]
-                            : []
-                    // Making this argument array is just for backward compatibility.
-                    )
-                );
-            } else {
-                $message = self::HandleFont . "$name > /$cmd";
-            }
+
+        if (class_exists(InfoAPI::class)) {
+            $context = new CommandExecutionContextInfo(
+                new SenderInfo($event->getSender()),
+                new TimeInfo((int)$time, (int)$microTime),
+                new CommandInfo($commandInstance),
+                $commandFirstSpace !== false
+                    ? [substr($commandTrim, $commandFirstSpace + 1)]
+                    : []
+            // Making this argument array is just for backward compatibility.
+            );
+            $message = InfoAPI::resolve(
+                (string)$message,
+                $context
+            );
+            $messageToPlayer = InfoAPI::resolve(
+                (string)$messageToPlayer,
+                $context
+            );
+        } else {
+            $message = $message === ""
+                ? $message
+                : "$name > /$cmd";
+            $messageToPlayer = $messageToPlayer === ""
+                ? $messageToPlayer
+                : self::HandleFont . "[Track] $name > /$cmd";
+        }
+        if ($message !== "") {
             $this->getLogger()->info($message);
         }
-        if ($messageToPlayer !== null) {
-            if ($api) {
-                $messageToPlayer = InfoAPI::resolve(
-                    $messageToPlayer,
-                    $context
-                );
-            } else {
-                $messageToPlayer = "[Track] $name > /$cmd";
-            }
+        if ($messageToPlayer !== "") {
             foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
                 if ($tracker->hasPermission("track.tracker")) {
                     $tracker->sendMessage($messageToPlayer);

@@ -107,6 +107,7 @@ class Main extends PluginBase implements Listener
                 new SenderInfo($event->getSender()),
                 new TimeInfo((int)$time, (int)$microTime),
                 new CommandInfo($commandInstance),
+                $cmd,
                 $commandFirstSpace !== false
                     ? [substr($commandTrim, $commandFirstSpace + 1)]
                     : []

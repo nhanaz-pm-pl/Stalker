@@ -16,6 +16,7 @@ use function class_exists;
 use function explode;
 use function ltrim;
 use function microtime;
+use function strlen;
 use function strpos;
 use function substr;
 
@@ -86,7 +87,10 @@ class Main extends PluginBase implements Listener
             substr(
                 $commandTrim,
                 0,
-                $commandFirstSpace = strpos($commandTrim, " ")
+                ($commandFirstSpace = strpos($commandTrim, " "))
+                !== false
+                    ? $commandFirstSpace
+                    : strlen($commandTrim)
             )
         );
         $this->getLogger()->info($message = InfoAPI::resolve(
@@ -95,7 +99,9 @@ class Main extends PluginBase implements Listener
                 new SenderInfo($event->getSender()),
                 new TimeInfo((int)$time, (int)$microTime),
                 new CommandInfo($commandInstance),
-                [substr($commandTrim, $commandFirstSpace + 1)]
+                $commandFirstSpace !== false
+                    ? [substr($commandTrim, $commandFirstSpace + 1)]
+                    : []
             // Making this argument array is just for backward compatibility.
             )
         ));

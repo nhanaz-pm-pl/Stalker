@@ -11,7 +11,7 @@ authors:
 src-namespace-prefix: NhanAZ\Track
 website: https://github.com/NhanAZ
 description: Help staffs track players using commands.
-soft-depends:
+soft-depend:
   - InfoAPI
 
 permissions:

@@ -99,7 +99,7 @@ class Main extends PluginBase implements Listener
         );
         $messageToPlayer = $this->getConfig()->get(
             "TrackMessageToPlayer",
-           "{UnicodeFont}[Track] {Label} > /{Command Name} {Arguments}"
+           "{UnicodeFont}{DARKGRAY}[Track] {GRAY}{Sender Name} > /{Label} {Arguments}"
         ) ?? $message;
 
         if (class_exists(InfoAPI::class)) {

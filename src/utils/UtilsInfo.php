@@ -7,6 +7,7 @@ namespace NhanAZ\Track\utils;
 
 use NhanAZ\Track\Main;
 use RuntimeException;
+use SOFe\InfoAPI\FormatInfo;
 use SOFe\InfoAPI\Info;
 use SOFe\InfoAPI\InfoAPI;
 use SOFe\InfoAPI\StringInfo;
@@ -24,6 +25,11 @@ class UtilsInfo extends Info
                 Main::HandleFont
             )
         );
+        InfoAPI::provideFallback(
+            self::class,
+            FormatInfo::class,
+            fn(self $info) : FormatInfo => new FormatInfo()
+        )
     }
 
     public function toString() : string

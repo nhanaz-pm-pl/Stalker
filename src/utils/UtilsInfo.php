@@ -29,7 +29,7 @@ class UtilsInfo extends Info
             self::class,
             FormatInfo::class,
             fn(self $info) : FormatInfo => new FormatInfo()
-        )
+        );
     }
 
     public function toString() : string

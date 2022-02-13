@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
-use pocketmine\utils\Config;
+use NhanAZ\Track\utils\UtilsInfo;
 use pocketmine\event\Listener;
-use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
+use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
+use SOFe\InfoAPI\InfoAPI;
+use SOFe\InfoAPI\TimeInfo;
+use function class_exists;
+use function explode;
+use function ltrim;
+use function microtime;
+use function strlen;
+use function strpos;
+use function substr;
 
 class Main extends PluginBase implements Listener
 {
@@ -42,6 +52,12 @@ class Main extends PluginBase implements Listener
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
+        if (class_exists(InfoAPI::class)) {
+            SenderInfo::init();
+            CommandInfo::init();
+            CommandExecutionContextInfo::init();
+            UtilsInfo::init();
+        }
 	}
 
 	public function onDisable() : void
@@ -62,17 +78,70 @@ class Main extends PluginBase implements Listener
 		$this->history->set("{$time} : {$name}", $cmd);
 		$this->history->save();
 
-		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-		/* HVUf = Handle Variable Unicode Font */
-		$HVUf = ($UnicodeFont == true ? self::HandleFont : "");
+        [
+            $time,
+            $microTime
+        ] = explode(".", microtime());
+        $commandTrim = ltrim($cmd);
+        $commandInstance = $this->getServer()->getCommandMap()->getCommand(
+            substr(
+                $commandTrim,
+                0,
+                ($commandFirstSpace = strpos($commandTrim, " "))
+                !== false
+                    ? $commandFirstSpace
+                    : strlen($commandTrim)
+            )
+        );
+        $message = $this->getConfig()->get(
+            "TrackMessage",
+           "{Sender Name} > /{Label} {Arguments}"
+        );
+        $messageToPlayer = $this->getConfig()->get(
+            "TrackMessageToPlayer",
+           "{UnicodeFont}{DARKGRAY}[Track] {GRAY}{Sender Name} > /{Label} {Arguments}"
+        ) ?? $message;
 
-		$this->getLogger()->info("{$name} > /{$cmd}");
+        if (class_exists(InfoAPI::class)) {
+            $context = new CommandExecutionContextInfo(
+                new SenderInfo($event->getSender()),
+                new TimeInfo((int)$time, (int)$microTime),
+                $commandInstance === null
+                    ? null
+                    : new CommandInfo($commandInstance),
+                $cmd,
+                $commandFirstSpace !== false
+                    ? [substr($commandTrim, $commandFirstSpace + 1)]
+                    : []
+            // Making this argument array is just for backward compatibility.
+            );
+            $message = InfoAPI::resolve(
+                (string)$message,
+                $context
+            );
+            $messageToPlayer = InfoAPI::resolve(
+                (string)$messageToPlayer,
+                $context
+            );
+        } else {
+            $message = $message === ""
+                ? $message
+                : "$name > /$cmd";
+            $messageToPlayer = $messageToPlayer === ""
+                ? $messageToPlayer
+                : self::HandleFont . "[Track] $name > /$cmd";
+        }
+        if ($message !== "") {
+            $this->getLogger()->info($message);
+        }
+        if ($messageToPlayer !== "") {
+            foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
+                if ($tracker->hasPermission("track.tracker")) {
+                    $tracker->sendMessage($messageToPlayer);
+                }
+            }
+        }
 
-		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
-			if ($tracker->hasPermission("track.tracker")) {
-				$tracker->sendMessage("{$HVUf}[Track] {$name} > /{$cmd}");
-			}
-		}
 		return true;
 	}
 }

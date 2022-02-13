@@ -1,6 +1,6 @@
 ---
-#Set UnicodeFont: true to UnicodeFont: false if you don't want to track messages converted to unicode fonts
-UnicodeFont: true #UnicodeFont: true (Recommend using)
+TrackMessage: "{Sender Name} > /{Label} {Arguments}"
+TrackMessageToPlayer: "{UnicodeFont}{DARKGRAY}[Track] {GRAY}{Sender Name} > /{Label} {Arguments}"
 
 DeleteHistory:
 #Set onEnable: true if you want to clear the player's command usage history when the server enables.

@@ -1,16 +1,19 @@
 # General
-**A plugin that allows staff to track the commands players use**
-
-# Features
-- Allows selected staffs to watch players use commands to facilitate support.
-- Selected people can review the commands they entered.
-- Selected people are allowed to see console or rcon commands and players used.
-- The console is allowed to see the commands the player uses.
+**Allow staff to track commands used by players**
 
 # Permissions
-| Permission      | Description                                                              |
-| ----------------| ------------------------------------------------------------------------ |
-| `track.tracker` | People with this permission are authorized to track player using command |
+| Permission      | Description                                   |
+| ----------------| --------------------------------------------- |
+| `track.tracker` | Allow staff to track commands used by players |
+
+# Images
+
+<details> <summary>Tracking screen in-game</summary> <img src="https://github.com/NhanAZ/Images/blob/master/handlefont.jpg"/> </details>
+
+<details> <summary>Tracking screen in console</summary> <img src="https://github.com/NhanAZ/Images/blob/master/incls.png"/> </details>
+
+# Contact
+**You can contact me directly via Discord NhanAZ#9115**
 
 <!--
 # TODO
@@ -24,12 +27,3 @@
 - [ ] Sign Track.
 - [ ] Etc...
 -->
-
-# Images
-
-<details> <summary>Tracking screen in-game</summary> <img src="https://github.com/NhanAZ/Images/blob/master/handlefont.jpg"/> </details>
-
-<details> <summary>Tracking screen in console</summary> <img src="https://github.com/NhanAZ/Images/blob/master/incls.png"/> </details>
-
-# Contact
-**You can contact me directly via Discord NhanAZ#9115**

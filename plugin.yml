@@ -1,21 +1,24 @@
 ---
 name: Track
-author: NhanAZ
-version: 0.0.8
+version: 1.0.0
 main: NhanAZ\Track\Main
 api: 4.0.0
+src-namespace-prefix: NhanAZ\Track
+
+website: https://github.com/NhanAZ
+description: Allow staff to track commands used by players
+author:
+  - NhanAZ
+  - EndermanbugZJFC
 authors:
   - Nexus9265
   - Mcbeany
-  - EndermanbugZJFC
-src-namespace-prefix: NhanAZ\Track
-website: https://github.com/NhanAZ
-description: Help staffs track players using commands.
+
 softdepend:
   - InfoAPI
 
 permissions:
   track.tracker:
     default: op
-    description: People with this permission are authorized to track player using command
+    description: Allow staff to track commands used by players
 ...

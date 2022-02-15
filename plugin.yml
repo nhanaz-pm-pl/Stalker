@@ -7,10 +7,9 @@ src-namespace-prefix: NhanAZ\Track
 
 website: https://github.com/NhanAZ
 description: Allow staff to track commands used by players
-author:
-  - NhanAZ
-  - EndermanbugZJFC
+author: NhanAZ
 authors:
+  - EndermanbugZJFC
   - Nexus9265
   - Mcbeany
 

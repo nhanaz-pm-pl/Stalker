@@ -26,13 +26,13 @@ class Main extends PluginBase implements Listener {
 
 	protected Config $cfg;
 
-	public function RemoveConfig(): void {
+	private function RemoveConfig(): void {
 		foreach ($this->history->getAll() as $history => $data) {
 			$this->history->remove($history);
 		}
 	}
 
-	public function initInfoAPI(): void {
+	private function initInfoAPI(): void {
 		if (class_exists(InfoAPI::class)) {
 			SenderInfo::init();
 			CommandInfo::init();
@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener {
 		}
 	}
 
-	public function onEnable(): void {
+	protected function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
 		$this->cfg = $this->getConfig();
@@ -53,7 +53,7 @@ class Main extends PluginBase implements Listener {
 		$this->initInfoAPI();
 	}
 
-	public function onDisable(): void {
+	protected function onDisable(): void {
 		if ($this->cfg->getNested("DeleteHistory.onDisable")) {
 			$this->RemoveConfig();
 		}

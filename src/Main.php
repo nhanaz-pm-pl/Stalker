@@ -26,10 +26,15 @@ class Main extends PluginBase implements Listener {
 
 	protected Config $cfg;
 
-	private function RemoveConfig(): void {
-		foreach ($this->history->getAll() as $history => $data) {
-			$this->history->remove($history);
-		}
+	private string $logPath;
+
+	public function onEnable(): void {
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->initConfig();
+		$this->cfg = $this->getConfig();
+		$this->initLog();
+		$this->initInfoAPI();
+		$this->deleteHistory();
 	}
 
 	private function initInfoAPI(): void {
@@ -41,22 +46,39 @@ class Main extends PluginBase implements Listener {
 		}
 	}
 
-	protected function onEnable(): void {
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+	private function initLog(): void {
+		$this->logPath = $this->getDataFolder() . "history.log";
+		if (!file_exists($this->logPath)) $this->createLogFile();
+	}
+
+	private function initConfig(): void {
 		$this->saveDefaultConfig();
-		$this->cfg = $this->getConfig();
-		$this->saveResource("history.yml");
-		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
-		if ($this->cfg->getNested("DeleteHistory.onEnable")) {
-			$this->RemoveConfig();
+	}
+
+	private function createLogFile() {
+		file_put_contents($this->logPath, "# [Time] {Sender} > /{Command}\n");
+	}
+
+	private function deleteHistory(): void {
+		if ($this->cfg->getNested("DeleteHistory.onEnable", false)) {
+			$this->createLogFile();
 		}
-		$this->initInfoAPI();
+		if ($this->cfg->getNested("DeleteHistory.onDisable", false)) {
+			$this->createLogFile();
+		}
 	}
 
 	protected function onDisable(): void {
-		if ($this->cfg->getNested("DeleteHistory.onDisable")) {
-			$this->RemoveConfig();
+		$this->deleteHistory();
+	}
+
+	private function onLog($time, $sender, $command): void {
+		if (filesize($this->logPath) / 1048576 >= $this->cfg->get("MaxSize", 16)) {
+			$this->createLogFile();
 		}
+		$message = "# [" . $time . "] {" . $sender . "} > /" . $command . "\n";
+		file_put_contents($this->logPath, $message, FILE_APPEND);
+		clearstatcache(true, $this->logPath);
 	}
 
 	public function onCommandEvent(CommandEvent $event) {
@@ -65,8 +87,7 @@ class Main extends PluginBase implements Listener {
 		$time = date("D d/m/Y H:i:s(A)");
 		$name = $event->getSender()->getName();
 
-		$this->history->set("{$time} : {$name}", $cmd);
-		$this->history->save();
+		$this->onLog($time, $name, $cmd);
 
 		[
 			$time,

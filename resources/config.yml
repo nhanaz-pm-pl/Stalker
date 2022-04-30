@@ -3,11 +3,14 @@ TrackMessage: "{Sender Name} > /{Label} {Arguments}"
 TrackMessageToPlayer: "{UnicodeFont}{DARKGRAY}[Track] {GRAY}{Sender Name} > /{Label} {Arguments}"
 
 DeleteHistory:
-#Set onEnable: true if you want to clear the player's command usage history when the server enables.
-#Set onEnable: false if you don't want to clear the player's command usage history when the server enables.
-  onEnable: false #onEnable: true (Recommend using)
+# Set onEnable: true if you want to clear the player's command usage history when the server enables.
+# Set onEnable: false if you don't want to clear the player's command usage history when the server enables.
+  onEnable: false # onEnable: true (Recommend using)
 
-#Set onDisable: true if you want to clear the player's command usage history when the server disable
-#Set onDisable: false if you don't want to clear the player's command usage history when the server disable
-  onDisable: false #onDisable: false (Recommend using)
+# Set onDisable: true if you want to clear the player's command usage history when the server disable
+# Set onDisable: false if you don't want to clear the player's command usage history when the server disable
+  onDisable: false # onDisable: false (Recommend using)
+
+# Maximum log file size
+MaxSize: 16 # In Megabytes
 ...

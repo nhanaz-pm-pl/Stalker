@@ -24,11 +24,20 @@ class Main extends PluginBase implements Listener {
 
 	public const HandleFont = TF::ESCAPE . "　";
 
-	public $history;
+	protected Config $cfg;
 
 	public function RemoveConfig(): void {
 		foreach ($this->history->getAll() as $history => $data) {
 			$this->history->remove($history);
+		}
+	}
+
+	public function initInfoAPI(): void {
+		if (class_exists(InfoAPI::class)) {
+			SenderInfo::init();
+			CommandInfo::init();
+			CommandExecutionContextInfo::init();
+			UtilsInfo::init();
 		}
 	}
 
@@ -41,12 +50,7 @@ class Main extends PluginBase implements Listener {
 		if ($this->cfg->getNested("DeleteHistory.onEnable")) {
 			$this->RemoveConfig();
 		}
-		if (class_exists(InfoAPI::class)) {
-			SenderInfo::init();
-			CommandInfo::init();
-			CommandExecutionContextInfo::init();
-			UtilsInfo::init();
-		}
+		$this->initInfoAPI();
 	}
 
 	public function onDisable(): void {

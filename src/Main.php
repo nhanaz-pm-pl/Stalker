@@ -22,16 +22,9 @@ use function substr;
 
 class Main extends PluginBase implements Listener {
 
-	public const InvalidConfig = "NoticeRemoved in config.yml doesn't exist";
 	public const HandleFont = TF::ESCAPE . "　";
 
 	public $history;
-
-	public function InvalidConfig(): void {
-		$this->history->save();
-		$NoticeRemoved = $this->cfg->get("NoticeRemoved", self::InvalidConfig);
-		$this->getLogger()->info(TF::DARK_RED . $NoticeRemoved);
-	}
 
 	public function RemoveConfig(): void {
 		foreach ($this->history->getAll() as $history => $data) {
@@ -47,7 +40,6 @@ class Main extends PluginBase implements Listener {
 		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
 		if ($this->cfg->getNested("DeleteHistory.onEnable")) {
 			$this->RemoveConfig();
-			$this->InvalidConfig();
 		}
 		if (class_exists(InfoAPI::class)) {
 			SenderInfo::init();
@@ -60,7 +52,6 @@ class Main extends PluginBase implements Listener {
 	public function onDisable(): void {
 		if ($this->cfg->getNested("DeleteHistory.onDisable")) {
 			$this->RemoveConfig();
-			$this->InvalidConfig();
 		}
 	}
 

@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener {
 
 	public function InvalidConfig(): void {
 		$this->history->save();
-		$NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
+		$NoticeRemoved = $this->cfg->get("NoticeRemoved", self::InvalidConfig);
 		$this->getLogger()->info(TF::DARK_RED . $NoticeRemoved);
 	}
 
@@ -42,9 +42,10 @@ class Main extends PluginBase implements Listener {
 	public function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
+		$this->cfg = $this->getConfig();
 		$this->saveResource("history.yml");
 		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
-		if ($this->getConfig()->getNested("DeleteHistory.onEnable")) {
+		if ($this->cfg->getNested("DeleteHistory.onEnable")) {
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
@@ -57,7 +58,7 @@ class Main extends PluginBase implements Listener {
 	}
 
 	public function onDisable(): void {
-		if ($this->getConfig()->getNested("DeleteHistory.onDisable")) {
+		if ($this->cfg->getNested("DeleteHistory.onDisable")) {
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
@@ -87,11 +88,11 @@ class Main extends PluginBase implements Listener {
 					: strlen($commandTrim)
 			)
 		);
-		$message = $this->getConfig()->get(
+		$message = $this->cfg->get(
 			"TrackMessage",
 			"{Sender Name} > /{Label} {Arguments}"
 		);
-		$messageToPlayer = $this->getConfig()->get(
+		$messageToPlayer = $this->cfg->get(
 			"TrackMessageToPlayer",
 			"{UnicodeFont}{DARKGRAY}[Track] {GRAY}{Sender Name} > /{Label} {Arguments}"
 		) ?? $message;

@@ -8,9 +8,9 @@
 
 # Images
 
-<details> <summary>Tracking screen in-game</summary> <img src="https://github.com/NhanAZ/Images/blob/master/handlefont.jpg"/> </details>
+<details> <summary>Tracking screen in-game</summary> <img src="https://user-images.githubusercontent.com/60387689/168267250-0eb64963-9529-483e-8791-435495895315.jpg"/> </details>
 
-<details> <summary>Tracking screen in console</summary> <img src="https://github.com/NhanAZ/Images/blob/master/incls.png"/> </details>
+<details> <summary>Tracking screen in console</summary> <img src="https://user-images.githubusercontent.com/60387689/168267318-979a0340-2dfd-43b5-83d6-4d45db7c5c51.png"/> </details>
 
 # Contact
 **You can contact me directly via Discord NhanAZ#9115**

@@ -1,11 +1,11 @@
 ---
 name: Track
-author: NhanAZ
 version: 0.0.8
 main: NhanAZ\Track\Main
 api: 4.0.0
 src-namespace-prefix: NhanAZ\Track
 website: https://github.com/NhanAZ
+author: NhanAZ
 description: Show commands used by player to staff
 
 permissions:

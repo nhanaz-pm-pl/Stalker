@@ -4,10 +4,6 @@ author: NhanAZ
 version: 0.0.8
 main: NhanAZ\Track\Main
 api: 4.0.0
-authors:
-  - Nexus9265
-  - Mcbeany
-  - EndermanbugZJFC
 src-namespace-prefix: NhanAZ\Track
 website: https://github.com/NhanAZ
 description: Help staffs track players using commands.

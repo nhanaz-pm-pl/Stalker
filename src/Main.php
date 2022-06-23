@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace NhanAZ\Track;
 
-use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
@@ -28,13 +27,13 @@ class Main extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 		$this->saveResource("history.yml");
 		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
-		if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {
+		if ($this->getConfig()->get("DeleteHistory")["onEnable"]) {
 			$this->RemoveConfig();
 		}
 	}
 
 	public function onDisable(): void {
-		if ($this->getConfig()->get("DeleteHistory")["onDisable"] == true) {
+		if ($this->getConfig()->get("DeleteHistory")["onDisable"]) {
 			$this->RemoveConfig();
 		}
 	}

@@ -6,10 +6,10 @@ main: NhanAZ\Track\Main
 api: 4.0.0
 src-namespace-prefix: NhanAZ\Track
 website: https://github.com/NhanAZ
-description: Help staffs track players using commands.
+description: Show commands used by player to staff
 
 permissions:
   track.tracker:
     default: op
-    description: People with this permission are authorized to track player using command
+    description: Allows to see commands used by players
 ...

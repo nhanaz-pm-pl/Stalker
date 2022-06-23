@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener {
 		}
 	}
 
-	public function onEnable(): void {
+	protected function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
 		$this->saveResource("history.yml");
@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener {
 		}
 	}
 
-	public function onDisable(): void {
+	protected function onDisable(): void {
 		if ($this->getConfig()->getNested("DeleteHistory.onDisable")) {
 			$this->RemoveConfig();
 		}

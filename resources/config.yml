@@ -1,6 +1,6 @@
 ---
-# Clear history of commands used by players when the server is started or disabled
-DeleteHistory:
+# Clear log of commands used by players when the server is started or disabled
+deleteLog:
   onEnable: false
   onDisable: false
 ...

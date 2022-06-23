@@ -11,26 +11,26 @@ use pocketmine\event\server\CommandEvent;
 
 class Main extends PluginBase implements Listener {
 
-	public $history;
+	public $log;
 
 	public function RemoveConfig(): void {
-		foreach ($this->history->getAll() as $history => $data) {
-			$this->history->remove($history);
+		foreach ($this->log->getAll() as $log => $data) {
+			$this->log->remove($log);
 		}
 	}
 
 	protected function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
-		$this->saveResource("history.yml");
-		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
-		if ($this->getConfig()->getNested("DeleteHistory.onEnable")) {
+		$this->saveResource("log.yml");
+		$this->log = new Config($this->getDataFolder() . "log.yml", Config::YAML);
+		if ($this->getConfig()->getNested("deleteLog.onEnable")) {
 			$this->RemoveConfig();
 		}
 	}
 
 	protected function onDisable(): void {
-		if ($this->getConfig()->getNested("DeleteHistory.onDisable")) {
+		if ($this->getConfig()->getNested("deleteLog.onDisable")) {
 			$this->RemoveConfig();
 		}
 	}
@@ -41,8 +41,8 @@ class Main extends PluginBase implements Listener {
 		$time = date("D d/m/Y H:i:s(A)");
 		$name = $event->getSender()->getName();
 
-		$this->history->set("{$time} : {$name}", $cmd);
-		$this->history->save();
+		$this->log->set("{$time} : {$name}", $cmd);
+		$this->log->save();
 
 		$this->getLogger()->info("{$name} > /{$cmd}");
 

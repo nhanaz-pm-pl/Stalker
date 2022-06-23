@@ -11,50 +11,44 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
 
-class Main extends PluginBase implements Listener
-{
+class Main extends PluginBase implements Listener {
 
 	public const InvalidConfig = "NoticeRemoved in config.yml doesn't exist";
 	public const HandleFont = TF::ESCAPE . "　";
 
 	public $history;
 
-	public function InvalidConfig() : void
-	{
+	public function InvalidConfig(): void {
 		$this->history->save();
 		$NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
 		$this->getLogger()->info(TF::DARK_RED . $NoticeRemoved);
 	}
 
-	public function RemoveConfig() : void
-	{
+	public function RemoveConfig(): void {
 		foreach ($this->history->getAll() as $history => $data) {
 			$this->history->remove($history);
 		}
 	}
 
-	public function onEnable() : void
-	{
+	public function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->saveDefaultConfig();
 		$this->saveResource("history.yml");
-		$this->history = new Config($this->getDataFolder()."history.yml", Config::YAML);
+		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
 		if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
 	}
 
-	public function onDisable() : void
-	{
+	public function onDisable(): void {
 		if ($this->getConfig()->get("DeleteHistory")["onDisable"] == true) {
 			$this->RemoveConfig();
 			$this->InvalidConfig();
 		}
 	}
 
-	public function onCommandEvent(CommandEvent $event)
-	{
+	public function onCommandEvent(CommandEvent $event) {
 		$cmd = $event->getCommand();
 
 		$time = date("D d/m/Y H:i:s(A)");

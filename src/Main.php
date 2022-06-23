@@ -13,16 +13,9 @@ use pocketmine\event\server\CommandEvent;
 
 class Main extends PluginBase implements Listener {
 
-	public const InvalidConfig = "NoticeRemoved in config.yml doesn't exist";
 	public const HandleFont = TF::ESCAPE . "　";
 
 	public $history;
-
-	public function InvalidConfig(): void {
-		$this->history->save();
-		$NoticeRemoved = $this->getConfig()->get("NoticeRemoved", self::InvalidConfig);
-		$this->getLogger()->info(TF::DARK_RED . $NoticeRemoved);
-	}
 
 	public function RemoveConfig(): void {
 		foreach ($this->history->getAll() as $history => $data) {
@@ -37,14 +30,12 @@ class Main extends PluginBase implements Listener {
 		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
 		if ($this->getConfig()->get("DeleteHistory")["onEnable"] == true) {
 			$this->RemoveConfig();
-			$this->InvalidConfig();
 		}
 	}
 
 	public function onDisable(): void {
 		if ($this->getConfig()->get("DeleteHistory")["onDisable"] == true) {
 			$this->RemoveConfig();
-			$this->InvalidConfig();
 		}
 	}
 

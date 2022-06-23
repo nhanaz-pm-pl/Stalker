@@ -24,13 +24,13 @@ class Main extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 		$this->saveResource("history.yml");
 		$this->history = new Config($this->getDataFolder() . "history.yml", Config::YAML);
-		if ($this->getConfig()->get("DeleteHistory")["onEnable"]) {
+		if ($this->getConfig()->getNested("DeleteHistory.onEnable")) {
 			$this->RemoveConfig();
 		}
 	}
 
 	public function onDisable(): void {
-		if ($this->getConfig()->get("DeleteHistory")["onDisable"]) {
+		if ($this->getConfig()->getNested("DeleteHistory.onDisable")) {
 			$this->RemoveConfig();
 		}
 	}

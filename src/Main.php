@@ -60,13 +60,23 @@ class Main extends PluginBase implements Listener {
 		$time = date("Y-m-d [H:i:s]");
 		$name = $event->getSender()->getName();
 
+		$replacements = [
+			"{sender}" => $name,
+			"{command}" => $cmd
+		];
+		$trackMsg = str_replace(
+			array_keys($replacements),
+			$replacements,
+			$this->getConfig()->get("trackMessage", "<{sender}> /{command}")
+		);
+
 		$this->onLog($time, $name, $cmd);
 
-		$this->getLogger()->info("{$name} > /{$cmd}");
+		$this->getLogger()->info($trackMsg);
 
 		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {
-				$tracker->sendMessage("[Track] {$name} > /{$cmd}");
+				$tracker->sendMessage($trackMsg);
 			}
 		}
 		return true;

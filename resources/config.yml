@@ -1,5 +1,9 @@
 ---
-# Clear log of commands used by players when the server is started or disabled
+# {sender} : Name of user who used command
+# {command} : Command used by user
+trackMessage: "<{sender}> /{command}"
+
+# Clear log of commands used by players when server is started or disabled
 deleteLog:
   onEnable: false
   onDisable: false

@@ -3,7 +3,4 @@
 DeleteHistory:
   onEnable: false
   onDisable: false
-
-#This is the message when the command usage history has been cleared.
-NoticeRemoved: "Removed player command usage history (Disabled at config.yml)"
 ...

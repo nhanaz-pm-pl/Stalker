@@ -3,4 +3,7 @@
 deleteLog:
   onEnable: false
   onDisable: false
+
+# Maximum log file size (In Megabytes)
+maxSize: 16
 ...

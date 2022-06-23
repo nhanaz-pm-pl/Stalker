@@ -7,12 +7,9 @@ namespace NhanAZ\Track;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\server\CommandEvent;
 
 class Main extends PluginBase implements Listener {
-
-	public const HandleFont = TF::ESCAPE . "　";
 
 	public $history;
 
@@ -47,15 +44,11 @@ class Main extends PluginBase implements Listener {
 		$this->history->set("{$time} : {$name}", $cmd);
 		$this->history->save();
 
-		$UnicodeFont = $this->getConfig()->get("UnicodeFont");
-		/* HVUf = Handle Variable Unicode Font */
-		$HVUf = ($UnicodeFont == true ? self::HandleFont : "");
-
 		$this->getLogger()->info("{$name} > /{$cmd}");
 
 		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {
-				$tracker->sendMessage("{$HVUf}[Track] {$name} > /{$cmd}");
+				$tracker->sendMessage("[Track] {$name} > /{$cmd}");
 			}
 		}
 		return true;

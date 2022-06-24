@@ -12,6 +12,7 @@ deleteLog:
 maxSize: 16
 
 # Time format in log file
+# https://www.php.net/manual/en/datetime.format.php
 timeFormat: "Y-m-d [H:i:s]"
 
 # {time} : Time players use commands

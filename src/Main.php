@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener {
 	}
 
 	private function onLog($time, $sender, $command): void {
-		if (filesize($this->logPath) / 1048576 >= $this->getConfig()->get("MaxSize", 16)) {
+		if (filesize($this->logPath) / 1048576 >= $this->getConfig()->get("maxSize", 16)) {
 			$this->createLogFile();
 		}
 		$message = $time . " [" . $sender . "]: /" . $command . PHP_EOL;

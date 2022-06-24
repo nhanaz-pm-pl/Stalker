@@ -49,7 +49,16 @@ class Main extends PluginBase implements Listener {
 		if (filesize($this->logPath) / 1048576 >= $this->getConfig()->get("maxSize", 16)) {
 			$this->createLogFile();
 		}
-		$message = $time . " [" . $sender . "]: /" . $command . PHP_EOL;
+		$replacements = [
+			"{time}" => $time,
+			"{sender}" => $sender,
+			"{command}" => $command
+		];
+		$message = str_replace(
+			array_keys($replacements),
+			$replacements,
+			$this->getConfig()->get("logFormat", "{time} [{sender}]: /{command}")
+		) . PHP_EOL;
 		file_put_contents($this->logPath, $message, FILE_APPEND);
 		clearstatcache(true, $this->logPath);
 	}

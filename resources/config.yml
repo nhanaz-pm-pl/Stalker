@@ -13,4 +13,9 @@ maxSize: 16
 
 # Time format in log file
 timeFormat: "Y-m-d [H:i:s]"
+
+# {time} : Time players use commands
+# {sender} : Name of user who used command
+# {command} : Command used by user
+logFormat: "{time} [{sender}]: /{command}"
 ...

@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener {
 	public function onCommandEvent(CommandEvent $event) {
 		$cmd = $event->getCommand();
 
-		$time = date("Y-m-d [H:i:s]");
+		$time = date($this->getConfig()->get("timeFormat", "Y-m-d [H:i:s]"));
 		$name = $event->getSender()->getName();
 
 		$replacements = [

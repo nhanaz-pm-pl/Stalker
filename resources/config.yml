@@ -10,4 +10,7 @@ deleteLog:
 
 # Maximum log file size (In Megabytes)
 maxSize: 16
+
+# Time format in log file
+timeFormat: "Y-m-d [H:i:s]"
 ...

@@ -67,6 +67,14 @@ class Main extends PluginBase implements Listener {
 		$cmd = $event->getCommand();
 		$time = date($this->getConfig()->get("timeFormat", "Y-m-d [H:i:s]"));
 		$name = $event->getSender()->getName();
+		$exceptionCmds = $this->getConfig()->get("exceptionCmds", []);
+		foreach ($exceptionCmds as $exceptionCmd) {
+			$cmdArr = explode(" ", $cmd);
+			if ($cmdArr[0] === $exceptionCmd) {
+				$cmd = preg_replace('/[^\s]/', "*", $cmd);
+			}
+		}
+		$this->onLog($time, $name, $cmd);
 		$replacements = [
 			"{sender}" => $name,
 			"{command}" => $cmd
@@ -76,7 +84,6 @@ class Main extends PluginBase implements Listener {
 			$replacements,
 			$this->getConfig()->get("trackMessage", "<{sender}> /{command}")
 		);
-		$this->onLog($time, $name, $cmd);
 		$this->getLogger()->info($trackMsg);
 		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {

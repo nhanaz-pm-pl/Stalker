@@ -1,6 +1,6 @@
 ---
 name: Track
-version: 1.0.1
+version: 1.0.2
 main: NhanAZ\Track\Main
 api: 4.0.0
 src-namespace-prefix: NhanAZ\Track

@@ -1,8 +1,8 @@
 ---
 name: Track
-version: 1.0.2
+version: 1.0.3+dev
 main: NhanAZ\Track\Main
-api: 4.0.0
+api: 5.0.0
 src-namespace-prefix: NhanAZ\Track
 website: https://github.com/NhanAZ
 author: NhanAZ

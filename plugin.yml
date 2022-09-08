@@ -5,7 +5,7 @@ main: NhanAZ\Track\Main
 api: 4.0.0
 website: https://github.com/NhanAZ
 author: NhanAZ
-description: Show commands used by player to staff
+description: Show commands used by players to staff
 
 permissions:
   track.tracker:

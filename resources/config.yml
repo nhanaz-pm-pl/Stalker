@@ -3,23 +3,6 @@
 # {command} : Command used by user
 trackMessage: "<{sender}> /{command}"
 
-# Clear log of commands used by players when server is started or disabled
-deleteLog:
-  onEnable: false
-  onDisable: false
-
-# Maximum log file size (In Megabytes)
-maxSize: 16
-
-# Time format in log file
-# https://www.php.net/manual/en/datetime.format.php
-timeFormat: "Y-m-d [H:i:s]"
-
-# {time} : Time players use commands
-# {sender} : Name of user who used command
-# {command} : Command used by user
-logFormat: "{time} [{sender}]: /{command}"
-
 # List of exception commands. (Experimental Feature)
 # The commands listed below will be hidden.
 # For example: /tell NhanAZ Hello World!

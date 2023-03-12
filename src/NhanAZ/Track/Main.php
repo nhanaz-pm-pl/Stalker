@@ -14,13 +14,12 @@ use Webmozart\PathUtil\Path;
 
 class Main extends PluginBase implements Listener {
 
+	private MainLogger $logger;
+
 	protected function onEnable(): void {
 		$this->saveDefaultConfig();
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-	}
-
-	private function getMainLogger(): MainLogger {
-		return new MainLogger(Path::join($this->getDataFolder(), "log.log"), Terminal::hasFormattingCodes(), "Server", new \DateTimeZone(Timezone::get()));
+		$this->logger = new MainLogger(Path::join($this->getDataFolder(), "log.log"), Terminal::hasFormattingCodes(), "Server", new \DateTimeZone(Timezone::get()));
 	}
 
 	/**
@@ -31,19 +30,17 @@ class Main extends PluginBase implements Listener {
 		$name = $event->getSender()->getName();
 
 		$exceptionCmds = $this->getConfig()->get("exceptionCmds");
-		foreach ($exceptionCmds as $exceptionCmd) {
-			$cmdArr = explode(" ", $cmd);
-			if ($cmdArr[0] === $exceptionCmd) {
-				$cmd = preg_replace('/[^\s]/', "*", $cmd);
-			}
-		}
+		if (is_array($exceptionCmds) && in_array(explode(" ", $cmd)[0], $exceptionCmds, true)) {
+			$cmd = preg_replace('/[^\s]/', "*", $cmd);
+		 }
 
 		$replacements = ["{sender}" => $name, "{command}" => $cmd];
-		$trackMsg = str_replace(array_keys($replacements), $replacements, $this->getConfig()->get("trackMessage"));
+		$trackMsg = str_replace(array_keys($replacements), $replacements, strval($this->getConfig()->get("trackMessage")));
 
-		$this->getMainLogger()->info($trackMsg);
+		$this->logger->info($trackMsg);
 
-		foreach ($this->getServer()->getOnlinePlayers() as $tracker) {
+		$onlinePlayers = $this->getServer()->getOnlinePlayers();
+		foreach ($onlinePlayers as $tracker) {
 			if ($tracker->hasPermission("track.tracker")) {
 				$tracker->sendMessage($trackMsg);
 			}

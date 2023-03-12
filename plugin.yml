@@ -1,6 +1,6 @@
 ---
 name: Track
-version: 2.0.0+beta
+version: 2.0.0
 main: NhanAZ\Track\Main
 api: 4.0.0
 website: https://github.com/NhanAZ

@@ -1,14 +1,14 @@
 ---
-name: Track
+name: Stalker
 version: 2.0.1
-main: NhanAZ\Track\Main
+main: NhanAZ\Stalker\Main
 api: 5.0.0
 website: https://github.com/NhanAZ
 author: NhanAZ
 description: Show commands used by players to staff
 
 permissions:
-  track.tracker:
+  stalker:
     default: op
     description: Allows to see commands used by players
 ...

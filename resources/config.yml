@@ -1,7 +1,7 @@
 ---
 # {sender} : Name of user who used command
 # {command} : Command used by user
-trackMessage: "<{sender}> /{command}"
+message: "<{sender}> /{command}"
 
 # List of exception commands. (Experimental Feature)
 # The commands listed below will be hidden.

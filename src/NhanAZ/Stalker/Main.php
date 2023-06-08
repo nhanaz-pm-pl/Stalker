@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NhanAZ\Track;
+namespace NhanAZ\Stalker;
 
 use pocketmine\event\Listener;
 use pocketmine\event\server\CommandEvent;
@@ -10,7 +10,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\MainLogger;
 use pocketmine\utils\Terminal;
 use pocketmine\utils\Timezone;
-use Webmozart\PathUtil\Path;
+use Symfony\Component\Filesystem\Path;
 
 class Main extends PluginBase implements Listener {
 
@@ -35,14 +35,14 @@ class Main extends PluginBase implements Listener {
 		 }
 
 		$replacements = ["{sender}" => $name, "{command}" => $cmd];
-		$trackMsg = str_replace(array_keys($replacements), $replacements, strval($this->getConfig()->get("trackMessage")));
+		$message = str_replace(array_keys($replacements), $replacements, strval($this->getConfig()->get("message")));
 
-		$this->logger->info($trackMsg);
+		$this->logger->info($message);
 
 		$onlinePlayers = $this->getServer()->getOnlinePlayers();
-		foreach ($onlinePlayers as $tracker) {
-			if ($tracker->hasPermission("track.tracker")) {
-				$tracker->sendMessage($trackMsg);
+		foreach ($onlinePlayers as $stalker) {
+			if ($stalker->hasPermission("stalker")) {
+				$stalker->sendMessage($message);
 			}
 		}
 		return true;

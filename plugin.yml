@@ -1,6 +1,6 @@
 ---
 name: Stalker
-version: 2.0.1
+version: 2.1.1
 main: NhanAZ\Stalker\Main
 api: 5.0.0
 website: https://github.com/NhanAZ

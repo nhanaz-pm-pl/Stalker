@@ -9,4 +9,6 @@ message: "<{sender}> /{command}"
 # will be converted to /**** ****** ***** ******
 # exceptionCmds: ["register", "login", "tell"]
 exceptionCmds: []
+
+perDayFile: false
 ...

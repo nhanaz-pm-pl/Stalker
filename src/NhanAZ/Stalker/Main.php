@@ -19,7 +19,12 @@ class Main extends PluginBase implements Listener {
 	protected function onEnable(): void {
 		$this->saveDefaultConfig();
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->logger = new MainLogger(Path::join($this->getDataFolder(), "log.log"), Terminal::hasFormattingCodes(), "Server", new \DateTimeZone(Timezone::get()));
+		if ($this->getConfig()->get("perDayFile")) {
+			@mkdir($this->getDataFolder() . "logs/");
+			$this->logger = new MainLogger(Path::join($this->getDataFolder(), "logs/" . date("Y-m-d") . ".log"), Terminal::hasFormattingCodes(), "Server", new \DateTimeZone(Timezone::get()));
+		} else {
+			$this->logger = new MainLogger(Path::join($this->getDataFolder(), "log.log"), Terminal::hasFormattingCodes(), "Server", new \DateTimeZone(Timezone::get()));
+		}
 	}
 
 	/**
@@ -32,7 +37,7 @@ class Main extends PluginBase implements Listener {
 		$exceptionCmds = $this->getConfig()->get("exceptionCmds");
 		if (is_array($exceptionCmds) && in_array(explode(" ", $cmd)[0], $exceptionCmds, true)) {
 			$cmd = preg_replace('/[^\s]/', "*", $cmd);
-		 }
+		}
 
 		$replacements = ["{sender}" => $name, "{command}" => $cmd];
 		$message = str_replace(array_keys($replacements), $replacements, strval($this->getConfig()->get("message")));
